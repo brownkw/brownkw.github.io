@@ -1,7 +1,7 @@
 ---
 title: My Favorite Mister Rogers Moment
 description: My Favorite Mister Rogers Moment
-slug: my-favorite-misterr-rogers-moment
+slug: my-favorite-mister-rogers-moment
 date: 2025-08-18 00:00:00+0000
 categories:
     - Motivational Moments
