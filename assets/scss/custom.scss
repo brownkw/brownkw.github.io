@@ -1,3 +1,88 @@
 /*
     You can add your own custom styles here.
 */
+
+/* Resume page */
+.page-resume {
+    --article-line-height: 1.4;
+
+    .article-content {
+        h1, h2, h3, h4, h5, h6 {
+            border-inline-start: none;
+            padding-inline-start: 0;
+            margin-inline-start: 0;
+            margin-top: 1em;
+            margin-bottom: 0.25em;
+
+            a.header-anchor {
+                display: none;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            & + p {
+                margin-top: 0;
+            }
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 1em;
+        }
+
+        .compact-list li {
+            margin-bottom: 0.25em;
+        }
+    }
+
+    .widget.archives .widget-icon {
+        display: none;
+    }
+}
+
+/* Resume page: print styles */
+@media print {
+    .page-resume {
+        /* Hide all chrome */
+        .left-sidebar,
+        .right-sidebar,
+        .article-header,
+        .article-footer,
+        .site-footer,
+        .disqus-container {
+            display: none !important;
+        }
+
+        /* Make content full width */
+        .container.main-container {
+            display: block;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .main-article {
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        /* Clean up margins for print */
+        .article-content {
+            padding: 0;
+        }
+
+        /* Collapse horizontal rules */
+        hr {
+            display: none;
+            margin: 0;
+        }
+
+        font-size: 11pt;
+    }
+
+    @page {
+        margin: 1.5cm 2cm;
+    }
+}
+
