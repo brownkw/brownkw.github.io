@@ -14,6 +14,8 @@ menu:
 
 # WAYNE BROWN
 
+[📄 Download PDF](wayne-brown-resume.pdf)
+
 brownkw@gmail.com · https://www.linkedin.com/in/brownkw · Ennis, MT (Open to Remote)
 
 ---
