@@ -4,6 +4,7 @@ slug: "resume"
 layout: "resume"
 outputs:
     - html
+    - markdown
     
 menu:
     main:

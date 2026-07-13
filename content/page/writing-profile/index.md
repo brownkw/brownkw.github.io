@@ -3,6 +3,9 @@ title: "Writing Voice & Style Guide"
 date: 2026-07-10
 slug: "writing-profile"
 comments: false
+outputs:
+  - html
+  - markdown
 ---
 
 This is my personal reference for writing style and voice across
