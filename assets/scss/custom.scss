@@ -116,46 +116,110 @@ END INACTIVE */
 /* Resume page: print styles */
 @media print {
     .page-resume {
+        background: #fff;
+        color: #111;
+        font-size: 10.5pt;
+        line-height: 1.32;
+
         /* Hide all chrome */
         .left-sidebar,
         .right-sidebar,
         .article-header,
         .article-footer,
         .site-footer,
-        .disqus-container {
+        .disqus-container,
+        .pswp,
+        #back-top,
+        .hamburger {
             display: none !important;
         }
 
         /* Make content full width */
         .container.main-container {
             display: block;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
         }
 
         .main {
             width: 100%;
             max-width: 100%;
+            padding: 0;
+            margin: 0;
         }
 
         .main-article {
             box-shadow: none;
             border-radius: 0;
+            margin: 0;
+            padding: 0;
+            background: transparent;
         }
 
-        /* Clean up margins for print */
         .article-content {
             padding: 0;
-        }
 
-        /* Collapse horizontal rules */
-        hr {
-            display: none;
-            margin: 0;
-        }
+            h1 {
+                font-size: 25pt;
+                letter-spacing: 0.08em;
+                text-align: center;
+                margin: 0 0 0.25rem;
+            }
 
-        font-size: 11pt;
+            h2 {
+                margin-top: 1rem;
+                padding-bottom: 0.15rem;
+                border-bottom: 1px solid #d1d5db;
+                font-size: 11pt;
+                letter-spacing: 0.08em;
+            }
+
+            h3 {
+                font-size: 12pt;
+                margin-top: 0.75rem;
+                margin-bottom: 0.15rem;
+            }
+
+            p {
+                margin: 0.2rem 0 0.45rem;
+            }
+
+            ul {
+                margin: 0.2rem 0 0.55rem 1rem;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 0.32rem;
+                break-inside: avoid;
+            }
+
+            hr {
+                display: none;
+                margin: 0;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            p:first-of-type,
+            h1 + p,
+            h1 + p + p {
+                text-align: center;
+            }
+
+            h1 + p {
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+            }
+        }
     }
 
     @page {
-        margin: 1.5cm 2cm;
+        size: letter;
+        margin: 1.1cm 1.35cm;
     }
 }
