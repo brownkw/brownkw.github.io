@@ -115,13 +115,26 @@ END INACTIVE */
 
 /* Resume page: print styles */
 @media print {
+    :root {
+        --resume-ink: #142033;
+        --resume-muted: #526077;
+        --resume-rule: #cfd8e3;
+        --resume-accent: #1f4b99;
+    }
+
+    @page {
+        size: Letter;
+        margin: 0.55in 0.62in;
+    }
+
     .page-resume {
         background: #fff;
-        color: #111;
-        font-size: 10.5pt;
-        line-height: 1.32;
+        color: var(--resume-ink);
+        font-size: 10.15pt;
+        line-height: 1.42;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
 
-        /* Hide all chrome */
         .left-sidebar,
         .right-sidebar,
         .article-header,
@@ -130,90 +143,113 @@ END INACTIVE */
         .disqus-container,
         .pswp,
         #back-top,
-        .hamburger {
+        .hamburger,
+        .widget,
+        .related-content,
+        nav,
+        footer {
             display: none !important;
         }
 
-        /* Make content full width */
-        .container.main-container {
+        .container.main-container,
+        .main,
+        .main-article {
             display: block;
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
-        .main {
             width: 100%;
             max-width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
-        .main-article {
-            box-shadow: none;
-            border-radius: 0;
             margin: 0;
             padding: 0;
             background: transparent;
+            box-shadow: none;
+            border-radius: 0;
         }
 
         .article-content {
             padding: 0;
 
+            h1,
+            h2,
+            h3,
+            p,
+            ul {
+                break-after: avoid;
+            }
+
             h1 {
-                font-size: 25pt;
-                letter-spacing: 0.08em;
+                font-size: 23pt;
+                line-height: 1;
+                letter-spacing: 0.16em;
                 text-align: center;
-                margin: 0 0 0.25rem;
+                margin: 0 0 0.3rem;
+                color: var(--resume-ink);
+            }
+
+            h1 + p {
+                display: none;
+            }
+
+            h1 + p + p {
+                margin: 0 0 0.8rem;
+                text-align: center;
+                font-size: 9.4pt;
+                color: var(--resume-muted);
+                letter-spacing: 0.01em;
             }
 
             h2 {
-                margin-top: 1rem;
-                padding-bottom: 0.15rem;
-                border-bottom: 1px solid #d1d5db;
-                font-size: 11pt;
-                letter-spacing: 0.08em;
+                margin: 0.95rem 0 0.4rem;
+                padding-bottom: 0.18rem;
+                border-bottom: 1px solid var(--resume-rule);
+                font-size: 10pt;
+                font-weight: 700;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--resume-accent);
             }
 
             h3 {
-                font-size: 12pt;
-                margin-top: 0.75rem;
-                margin-bottom: 0.15rem;
+                font-size: 11.35pt;
+                line-height: 1.2;
+                margin: 0.7rem 0 0.1rem;
+                color: var(--resume-ink);
+            }
+
+            h3 + p {
+                margin-top: 0;
+                margin-bottom: 0.35rem;
+                font-size: 9.35pt;
+                color: var(--resume-muted);
             }
 
             p {
-                margin: 0.2rem 0 0.45rem;
+                margin: 0.15rem 0 0.45rem;
             }
 
             ul {
-                margin: 0.2rem 0 0.55rem 1rem;
+                margin: 0.15rem 0 0.55rem 1rem;
                 padding: 0;
             }
 
             li {
-                margin-bottom: 0.32rem;
+                margin: 0 0 0.3rem;
+                padding-left: 0.1rem;
                 break-inside: avoid;
             }
 
+            li::marker {
+                color: var(--resume-accent);
+            }
+
             hr {
-                display: none;
-                margin: 0;
+                display: block;
+                margin: 0.85rem 0 0.75rem;
+                border: 0;
+                border-top: 1px solid var(--resume-rule);
             }
 
             a {
                 color: inherit;
                 text-decoration: none;
-            }
-
-            p:first-of-type,
-            h1 + p,
-            h1 + p + p {
-                text-align: center;
-            }
-
-            h1 + p {
-                font-weight: 600;
-                margin-bottom: 0.25rem;
             }
         }
     }

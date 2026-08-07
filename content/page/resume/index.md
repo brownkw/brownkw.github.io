@@ -14,11 +14,11 @@ I don't just advise partners on what to build. I build it with them.
 
 ## EXPERIENCE
 
-### Senior Partner Solutions Architect – Atlassian Platform
-**Atlassian** · August 2025 – Present · Remote
+### Atlassian · August 2025 – Present · Remote
 
-Partner Solutions Architect for Isos Technology and Adaptavist — with broader contributions to ecosystem standards, AI tooling, and partner enablement adopted across the global PSA org.
+**Senior Partner Solutions Architect – Atlassian Platform**
 
+- Partner Solutions Architect for Isos Technology and Adaptavist — with broader contributions to ecosystem standards, AI tooling, and partner enablement adopted across the global PSA org.
 - Primary technical liaison between partner builders and Atlassian engineering; surfaced blockers around LLM integration, data residency, and Forge runtime limits before they reached deals
 - Led "Office Hours with Atlassian" at PwC on Rovo agent architecture, Teamwork Graph, and AI code generation — the PwC partner lead called it "one of the most impactful sessions we've had to date"
 - Selected as speaker at Partner Accelerate '26 ("The Agentic Edge"), presenting agentic AI implementation patterns to ~75 partner practitioners
