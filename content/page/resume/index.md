@@ -1,3 +1,21 @@
+---
+title: "Resume"
+slug: "resume"
+layout: "resume"
+outputs:
+    - html
+    - markdown
+    
+menu:
+    main:
+        name: Resume
+        weight: 3
+        params:
+            icon: messages
+
+comments: false
+---
+
 # WAYNE BROWN
 
 brownkw@gmail.com · https://www.linkedin.com/in/brownkw · Ennis, MT (Open to Remote)
