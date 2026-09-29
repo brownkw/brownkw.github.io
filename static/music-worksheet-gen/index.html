@@ -347,6 +347,26 @@
         </div>
       </div>
       </div></div><!-- /Saved Setups -->
+
+      <div class="divider"></div>
+      <div class="section">
+      <h2 class="sec-toggle">Saved Worksheets <span class="chev">&#9656;</span></h2>
+      <div class="sec-body">
+      <div class="field">
+        <div class="preset-row">
+          <select id="wsSelect"><option value="">&mdash; saved worksheets &mdash;</option></select>
+          <button class="mini-btn" id="loadWsBtn">Load</button>
+          <button class="mini-btn" id="delWsBtn">Delete</button>
+        </div>
+      </div>
+      <div class="field">
+        <div class="preset-row">
+          <input type="text" id="wsName" placeholder="Name this worksheet&hellip;">
+          <button class="mini-btn" id="saveWsBtn">Save</button>
+        </div>
+      </div>
+      <p class="hint">Saves the <b>exact problems</b> shown &mdash; including notes you dragged or accidentals you added &mdash; so you can reprint the same sheet later. (Saved Setups above only stores the options, then makes fresh problems.)</p>
+      </div></div><!-- /Saved Worksheets -->
     </aside>
 
     <div class="sheet-wrap">
@@ -771,7 +791,52 @@ document.getElementById("delPresetBtn").addEventListener("click",()=>{
   const n=document.getElementById("presetSelect").value;if(!n){toast("Pick a setup to delete first");return;}
   askConfirm(`Delete the setup “${n}”? This can’t be undone.`,"Delete",()=>{
     const all=getPresets();delete all[n];putPresets(all);refreshPresetSelect();toast(`Deleted setup “${n}”`);
-  });
+  },"Delete setup?");
+});
+
+/* ---- save / load specific worksheets (exact problems, persisted) ---- */
+const WS_KEY="ss_worksheets";
+function getWorksheets(){try{return JSON.parse(localStorage.getItem(WS_KEY)||"{}");}catch(_){return {};}}
+function putWorksheets(o){try{localStorage.setItem(WS_KEY,JSON.stringify(o));}catch(_){}}
+function refreshWsSelect(sel){
+  const s=document.getElementById("wsSelect");
+  const names=Object.keys(getWorksheets()).sort((a,b)=>a.localeCompare(b));
+  s.innerHTML='<option value="">&mdash; saved worksheets &mdash;</option>'+
+    names.map(n=>`<option value="${n.replace(/"/g,"&quot;")}">${n.replace(/</g,"&lt;")}</option>`).join("");
+  if(sel)s.value=sel;
+}
+function saveCurrentWorksheet(name){
+  name=(name||"").trim();if(!name)return;
+  const all=getWorksheets();
+  all[name]={type:state.type,clef:state.clef,diff:state.diff,count:state.count,cols:state.cols,
+    studio:state.studio,title:state.title,notes:state.notes.slice(),instr:Object.assign({},state.instr),
+    showAnswers:state.showAnswers,problems:JSON.parse(JSON.stringify(state.problems))};
+  putWorksheets(all);refreshWsSelect(name);
+}
+function loadWorksheet(name){
+  const w=getWorksheets()[name];if(!w)return;
+  Object.assign(state,{type:w.type,clef:w.clef,diff:w.diff,count:w.count,cols:w.cols,
+    studio:w.studio,title:w.title,notes:(w.notes||[]).slice(),instr:Object.assign({},w.instr||{}),
+    showAnswers:!!w.showAnswers,problems:JSON.parse(JSON.stringify(w.problems||[]))});
+  applyControls();
+  const ab=document.getElementById("answerBtn");
+  ab.classList.toggle("on",state.showAnswers);
+  ab.innerHTML=state.showAnswers?"&#10005; &nbsp;Hide Answer Key":"&#10003; &nbsp;Show Answer Key";
+  render();   // deliberately NOT generate() — restore the exact saved problems
+}
+document.getElementById("saveWsBtn").addEventListener("click",()=>{
+  const el=document.getElementById("wsName");const name=el.value.trim();if(!name)return;
+  const existed=!!getWorksheets()[name];
+  saveCurrentWorksheet(name);el.value="";
+  toast(existed?`Updated worksheet “${name}”`:`Saved worksheet “${name}”`);
+});
+document.getElementById("wsName").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("saveWsBtn").click();});
+document.getElementById("loadWsBtn").addEventListener("click",()=>{const n=document.getElementById("wsSelect").value;if(!n){toast("Pick a worksheet to load first");return;}loadWorksheet(n);toast(`Loaded worksheet “${n}”`);});
+document.getElementById("delWsBtn").addEventListener("click",()=>{
+  const n=document.getElementById("wsSelect").value;if(!n){toast("Pick a worksheet to delete first");return;}
+  askConfirm(`Delete the worksheet “${n}”? This can’t be undone.`,"Delete",()=>{
+    const all=getWorksheets();delete all[n];putWorksheets(all);refreshWsSelect();toast(`Deleted worksheet “${n}”`);
+  },"Delete worksheet?");
 });
 
 /* collapsible sidebar sections (collapsed by default, state remembered) */
@@ -796,7 +861,7 @@ let toastTimer;
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2200);}
 const confirmModal=document.getElementById("confirmModal");
 let confirmCb=null;
-function askConfirm(msg,okLabel,cb){document.getElementById("confirmMsg").textContent=msg;document.getElementById("confirmOk").textContent=okLabel||"Confirm";confirmCb=cb;confirmModal.classList.add("open");}
+function askConfirm(msg,okLabel,cb,title){document.getElementById("confirmTitle").textContent=title||"Please confirm";document.getElementById("confirmMsg").textContent=msg;document.getElementById("confirmOk").textContent=okLabel||"Confirm";confirmCb=cb;confirmModal.classList.add("open");}
 function closeConfirm(){confirmModal.classList.remove("open");confirmCb=null;}
 document.getElementById("confirmCancel").addEventListener("click",closeConfirm);
 document.getElementById("confirmOk").addEventListener("click",()=>{const cb=confirmCb;closeConfirm();if(cb)cb();});
@@ -812,7 +877,7 @@ helpModal.addEventListener("click",e=>{if(e.target===helpModal)closeHelp();});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp();});
 
 /* init */
-buildChips();generate();render();syncInstrInput();refreshPresetSelect();
+buildChips();generate();render();syncInstrInput();refreshPresetSelect();refreshWsSelect();
 </script>
 </body>
 </html>
