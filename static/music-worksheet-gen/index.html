@@ -124,7 +124,8 @@
   .ws-instr .badge{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;background:var(--ink);color:#fff;padding:3px 8px;border-radius:20px;white-space:nowrap;}
   .answerkey-banner{text-align:center;font-weight:800;letter-spacing:3px;font-size:12px;color:var(--accent);border:1.5px dashed var(--accent);border-radius:8px;padding:6px;margin-bottom:14px;text-transform:uppercase;}
 
-  .grid{display:grid;gap:16px 18px;}
+  .grid{display:flex;flex-direction:column;gap:16px;}
+  .grid-row{display:grid;gap:18px;break-inside:avoid;page-break-inside:avoid;}
   .card{border:1px solid var(--line);border-radius:12px;background:#fffdf8;padding:10px 10px 12px;display:flex;flex-direction:column;align-items:center;break-inside:avoid;page-break-inside:avoid;}
   .card .num{align-self:flex-start;font-family:var(--sans);font-weight:700;font-size:14px;color:var(--accent);background:var(--paper-2);border:1px solid var(--line);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .card svg{display:block;margin:4px auto 6px;touch-action:none;}
@@ -643,8 +644,14 @@ function render(){
   document.getElementById("akBanner").innerHTML=state.showAnswers?`<div class="answerkey-banner">Answer Key</div>`:"";
 
   const grid=document.getElementById("grid");
-  grid.style.gridTemplateColumns=`repeat(${state.cols}, minmax(0,1fr))`;
-  grid.innerHTML=state.problems.map((p,i)=>cardHTML(p,i)).join("");
+  const cols=state.cols;
+  let html="";
+  for(let i=0;i<state.problems.length;i+=cols){
+    html+=`<div class="grid-row" style="grid-template-columns:repeat(${cols}, minmax(0,1fr))">`;
+    for(let j=i;j<Math.min(i+cols,state.problems.length);j++){html+=cardHTML(state.problems[j],j);}
+    html+=`</div>`;
+  }
+  grid.innerHTML=html;
 
   const isRhythm=state.type==="rhythm";
   const noNotes=isRhythm||state.clef==="both";
