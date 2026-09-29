@@ -484,11 +484,15 @@ function generate(){
   const poolOf=(c)=> (both ? PRESET[c][state.diff] : (state.notes.length?state.notes:PRESET[c][state.diff])).map(pitchFromName);
 
   if(state.type==="name"||state.type==="draw"){
+    /* Draw the Note gates accidentals by difficulty: none on easy,
+       ~35% on medium, ~60% on hard (randomly sharp or flat). */
+    const accChance=state.type==="draw"?(state.diff==="easy"?0:state.diff==="medium"?0.35:0.6):0;
+    const drawAcc=()=> Math.random()<accChance ? (Math.random()<0.5?1:-1) : 0;
     if(both){
-      for(let i=0;i<state.count;i++){const c=clefOf();P.push({clef:c,pitch:rand(poolOf(c))});}
+      for(let i=0;i<state.count;i++){const c=clefOf();P.push({clef:c,pitch:rand(poolOf(c)),acc:drawAcc()});}
     }else{
       let bag=shuffle(poolOf(state.clef).slice());
-      for(let i=0;i<state.count;i++){if(!bag.length)bag=shuffle(poolOf(state.clef).slice());P.push({clef:state.clef,pitch:bag.pop()});}
+      for(let i=0;i<state.count;i++){if(!bag.length)bag=shuffle(poolOf(state.clef).slice());P.push({clef:state.clef,pitch:bag.pop(),acc:drawAcc()});}
     }
   }else if(state.type==="interval"){
     const sizes=state.diff==="easy"?[2,3,4,5]:state.diff==="medium"?[2,3,4,5,6,8]:[2,3,4,5,6,7,8];
