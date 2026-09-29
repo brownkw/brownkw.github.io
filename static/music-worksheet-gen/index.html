@@ -184,6 +184,24 @@
   [data-theme="dark"] .hint b{color:#e7ecf2;}
   [data-theme="dark"] .divider{background:#38414e;}
 
+  /* ---- Tips & Notes modal ---- */
+  .help-btn{width:100%;margin-top:16px;padding:10px;border-radius:10px;border:1px dashed var(--line-strong);background:transparent;color:var(--ink-soft);font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.4px;cursor:pointer;transition:.15s;}
+  .help-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .modal-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,26,34,.55);backdrop-filter:blur(2px);}
+  .modal-overlay.open{display:flex;}
+  .modal{position:relative;width:100%;max-width:440px;background:#fff;color:var(--ink);border:1px solid var(--line-strong);border-radius:16px;padding:24px 26px 22px;box-shadow:0 30px 70px -20px rgba(0,0,0,.45);}
+  .modal h3{font-family:var(--sans);margin:0 0 14px;font-size:17px;font-weight:700;color:var(--ink);}
+  .modal p{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 10px;}
+  .modal p:last-child{margin-bottom:0;}
+  .modal p b{color:var(--ink);}
+  .modal-close{position:absolute;top:10px;right:14px;border:none;background:none;font-size:24px;line-height:1;cursor:pointer;color:var(--ink-soft);padding:0;}
+  .modal-close:hover{color:var(--accent);}
+  [data-theme="dark"] .help-btn{color:#93a1b2;border-color:#3d4653;}
+  [data-theme="dark"] .modal{background:#252d38;border-color:#38414e;}
+  [data-theme="dark"] .modal h3,[data-theme="dark"] .modal p b{color:#e7ecf2;}
+  [data-theme="dark"] .modal p{color:#93a1b2;}
+  [data-theme="dark"] .modal-close{color:#93a1b2;}
+
   @media (max-width:900px){.layout{grid-template-columns:1fr;}.sidebar{position:static;max-height:none;}}
 
   @media print{
@@ -214,6 +232,7 @@
 
   <div class="layout">
     <aside class="sidebar">
+      <button type="button" class="help-btn" id="helpBtn" style="margin-top:0;margin-bottom:16px;">&#9432; &nbsp;Tips &amp; Notes</button>
       <h2>Worksheet Type</h2>
       <div class="type-list" id="typeList">
         <button data-type="name" class="on"><span class="ic">&#9833;</span><span><span class="tt">Name the Note</span><br><span class="ts">Read notes on the staff</span></span></button>
@@ -319,8 +338,6 @@
         </div>
       </div>
       </div></div><!-- /Saved Setups -->
-
-      <p class="hint"><b>Notes:</b> tick the chips to choose which notes appear, or <b>drag a notehead</b> up/down to set a problem by hand. <b>Click a notehead</b> to add an accidental (cycles ♯ → ♭ → natural). Answers update automatically.</p>
     </aside>
 
     <div class="sheet-wrap">
@@ -341,6 +358,16 @@
           <span class="score">Score: <b>&nbsp;____ / <span id="outTotal"></span></b></span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="helpModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <button class="modal-close" id="helpClose" aria-label="Close">&times;</button>
+      <h3 id="helpTitle">Tips &amp; Notes</h3>
+      <p>Under <b>Notes to use</b>, click the note buttons to choose which pitches appear, or <b>drag a notehead</b> up or down to set a problem by hand.</p>
+      <p><b>Click a notehead</b> to add an accidental (cycles &#9839; &rarr; &#9837; &rarr; natural).</p>
+      <p>Answers update automatically as you edit.</p>
     </div>
   </div>
 
@@ -734,6 +761,14 @@ function secKey(h){return (h.textContent||"").replace(/[^A-Za-z ]/g,"").trim().t
     });
   });
 })();
+
+/* ---- Tips & Notes modal ---- */
+const helpModal=document.getElementById("helpModal");
+function closeHelp(){helpModal.classList.remove("open");}
+document.getElementById("helpBtn").addEventListener("click",()=>helpModal.classList.add("open"));
+document.getElementById("helpClose").addEventListener("click",closeHelp);
+helpModal.addEventListener("click",e=>{if(e.target===helpModal)closeHelp();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp();});
 
 /* init */
 buildChips();generate();render();syncInstrInput();refreshPresetSelect();
