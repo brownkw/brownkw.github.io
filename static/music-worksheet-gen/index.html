@@ -53,7 +53,15 @@
   .field{margin-bottom:15px;}
   .field > label{display:block;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
   select,input[type=text]{width:100%;padding:9px 11px;font-family:var(--sans);font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line-strong);border-radius:10px;outline:none;}
-  select:focus,input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(200,85,43,.15);}
+  select:focus,input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(138,47,59,.16);}
+  textarea{width:100%;padding:9px 11px;font-family:var(--sans);font-size:13px;line-height:1.45;color:var(--ink);background:#fff;border:1px solid var(--line-strong);border-radius:10px;outline:none;resize:vertical;min-height:64px;}
+  textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(138,47,59,.16);}
+  .lbl-btn{float:right;font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;}
+  .lbl-btn:hover{text-decoration:underline;}
+  .preset-row{display:flex;gap:6px;}
+  .preset-row select,.preset-row input{flex:1;min-width:0;}
+  .mini-btn{padding:0 12px;border-radius:9px;border:1px solid var(--line-strong);background:#fff;color:var(--ink);font-family:var(--sans);font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .mini-btn:hover{border-color:var(--accent);color:var(--accent);}
 
   .seg{display:flex;gap:6px;flex-wrap:wrap;}
   .seg button{flex:1 1 auto;min-width:44px;padding:8px 6px;border-radius:9px;cursor:pointer;border:1px solid var(--line-strong);background:#fff;color:var(--ink-soft);font-family:var(--sans);font-size:13px;font-weight:600;transition:.15s;}
@@ -153,11 +161,13 @@
   [data-theme="dark"] .sidebar h2,
   [data-theme="dark"] .field > label{color:#93a1b2;}
   [data-theme="dark"] select,
-  [data-theme="dark"] input[type=text]{background:#2b323d;color:#e7ecf2;border-color:#3d4653;}
+  [data-theme="dark"] input[type=text],
+  [data-theme="dark"] textarea{background:#2b323d;color:#e7ecf2;border-color:#3d4653;}
   [data-theme="dark"] .seg button,
   [data-theme="dark"] .chip,
   [data-theme="dark"] .chip-tools button,
   [data-theme="dark"] .type-list button,
+  [data-theme="dark"] .mini-btn,
   [data-theme="dark"] .btn-ghost{background:#2b323d;color:#cdd6e2;border-color:#3d4653;}
   [data-theme="dark"] .type-list button .tt{color:#e7ecf2;}
   [data-theme="dark"] .type-list button .ts{color:#93a1b2;}
@@ -205,6 +215,11 @@
         <button data-type="draw"><span class="ic">&#9998;</span><span><span class="tt">Draw the Note</span><br><span class="ts">Place notes on the staff</span></span></button>
         <button data-type="interval"><span class="ic">&#8597;</span><span><span class="tt">Name the Interval</span><br><span class="ts">Distance between two notes</span></span></button>
         <button data-type="rhythm"><span class="ic">&#9834;</span><span><span class="tt">Rhythm Math</span><br><span class="ts">Add up the beats (4/4)</span></span></button>
+      </div>
+
+      <div class="field" style="margin-top:14px;">
+        <label>Directions <button type="button" id="instrReset" class="lbl-btn">Reset</button></label>
+        <textarea id="instrInput" rows="3"></textarea>
       </div>
 
       <div class="divider"></div>
@@ -272,6 +287,22 @@
         <button class="btn btn-primary" id="regenBtn">&#8635; &nbsp;Generate New Set</button>
         <button class="btn btn-ghost" id="answerBtn">&#10003; &nbsp;Show Answer Key</button>
         <button class="btn btn-ink" id="printBtn">&#128424; &nbsp;Print / Save PDF</button>
+      </div>
+
+      <div class="divider"></div>
+      <h2>Saved Setups</h2>
+      <div class="field">
+        <div class="preset-row">
+          <select id="presetSelect"><option value="">&mdash; saved setups &mdash;</option></select>
+          <button class="mini-btn" id="loadPresetBtn">Load</button>
+          <button class="mini-btn" id="delPresetBtn">Delete</button>
+        </div>
+      </div>
+      <div class="field">
+        <div class="preset-row">
+          <input type="text" id="presetName" placeholder="Name this setup&hellip;">
+          <button class="mini-btn" id="savePresetBtn">Save</button>
+        </div>
       </div>
 
       <p class="hint"><b>Two ways to control notes:</b> tick the chips above to choose exactly which notes appear, or <b>drag any notehead up and down</b> on the worksheet to set a specific problem by hand. Answers update automatically.</p>
@@ -399,7 +430,7 @@ function intervalName(size){return INTERVAL_NAMES[size]||(size+"th");}
 /* ===== STATE ===== */
 const state={type:"name",clef:"treble",diff:"easy",count:12,cols:4,
   studio:"Brunner Studios",title:"",showAnswers:false,
-  notes:PRESET.treble.easy.slice(),problems:[]};
+  notes:PRESET.treble.easy.slice(),instr:{},problems:[]};
 
 const TYPE_META={
   name:{title:"Name the Note",instr:"Write the letter name of each note on the line below it.",foot:"Note reading"},
@@ -407,6 +438,9 @@ const TYPE_META={
   interval:{title:"Name the Interval",instr:"Count the distance between the two notes and write the interval (2nd, 3rd, 4th…).",foot:"Melodic intervals"},
   rhythm:{title:"Rhythm Math",instr:"Add the note values together. Write the total number of beats. (4/4: whole = 4, half = 2, quarter = 1, eighth = ½)",foot:"Counting & note values"}
 };
+/* directions: per-type custom override falls back to the built-in default */
+function currentInstr(){return state.instr[state.type]!==undefined?state.instr[state.type]:TYPE_META[state.type].instr;}
+function syncInstrInput(){const el=document.getElementById("instrInput");if(el)el.value=currentInstr();}
 
 /* ===== GENERATION ===== */
 function rand(a){return a[Math.floor(Math.random()*a.length)];}
@@ -481,7 +515,7 @@ function render(){
   const meta=TYPE_META[state.type];
   document.getElementById("outStudio").textContent=state.studio||"";
   document.getElementById("outTitle").textContent=state.title.trim()||meta.title;
-  document.getElementById("outInstr").textContent=meta.instr;
+  document.getElementById("outInstr").textContent=currentInstr();
   document.getElementById("outFootType").textContent=meta.foot;
   document.getElementById("outTotal").textContent=state.problems.length;
   document.getElementById("akBanner").innerHTML=state.showAnswers?`<div class="answerkey-banner">Answer Key</div>`:"";
@@ -551,7 +585,7 @@ function segSelect(container,key,cb){
 document.getElementById("typeList").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
   [...document.querySelectorAll("#typeList button")].forEach(x=>x.classList.remove("on"));b.classList.add("on");
-  state.type=b.dataset.type;generate();render();
+  state.type=b.dataset.type;generate();render();syncInstrInput();
 });
 segSelect(document.getElementById("clefSeg"),"clef",v=>{state.clef=v;state.notes=((PRESET[v]||PRESET.treble)[state.diff]).slice();buildChips();generate();render();});
 segSelect(document.getElementById("diffSeg"),"diff",v=>{state.diff=v;state.notes=((PRESET[state.clef]||PRESET.treble)[v]).slice();buildChips();generate();render();});
@@ -572,6 +606,8 @@ document.getElementById("notesPreset").addEventListener("click",()=>{state.notes
 
 document.getElementById("studioInput").addEventListener("input",e=>{state.studio=e.target.value;render();});
 document.getElementById("titleInput").addEventListener("input",e=>{state.title=e.target.value;render();});
+document.getElementById("instrInput").addEventListener("input",e=>{state.instr[state.type]=e.target.value;document.getElementById("outInstr").textContent=e.target.value;});
+document.getElementById("instrReset").addEventListener("click",()=>{delete state.instr[state.type];syncInstrInput();document.getElementById("outInstr").textContent=currentInstr();});
 document.getElementById("regenBtn").addEventListener("click",()=>{generate();render();});
 document.getElementById("answerBtn").addEventListener("click",e=>{
   state.showAnswers=!state.showAnswers;
@@ -593,8 +629,53 @@ document.getElementById("themeToggle").addEventListener("click",()=>{
 });
 (function(){let t="light";try{t=localStorage.getItem("ss_theme")||"light";}catch(_){}setTheme(t);})();
 
+/* ---- save / load customized setups (persisted in localStorage) ---- */
+const PRESET_KEY="ss_presets";
+function getPresets(){try{return JSON.parse(localStorage.getItem(PRESET_KEY)||"{}");}catch(_){return {};}}
+function putPresets(o){try{localStorage.setItem(PRESET_KEY,JSON.stringify(o));}catch(_){}}
+function refreshPresetSelect(sel){
+  const s=document.getElementById("presetSelect");
+  const names=Object.keys(getPresets()).sort((a,b)=>a.localeCompare(b));
+  s.innerHTML='<option value="">&mdash; saved setups &mdash;</option>'+
+    names.map(n=>`<option value="${n.replace(/"/g,"&quot;")}">${n.replace(/</g,"&lt;")}</option>`).join("");
+  if(sel)s.value=sel;
+}
+function saveCurrentPreset(name){
+  name=(name||"").trim();if(!name)return;
+  const all=getPresets();
+  all[name]={type:state.type,clef:state.clef,diff:state.diff,count:state.count,cols:state.cols,
+    studio:state.studio,title:state.title,notes:state.notes.slice(),instr:Object.assign({},state.instr)};
+  putPresets(all);refreshPresetSelect(name);
+}
+function setSeg(containerId,key,val){
+  document.querySelectorAll("#"+containerId+" button").forEach(b=>b.classList.toggle("on",b.dataset[key]===String(val)));
+}
+function applyControls(){
+  document.querySelectorAll("#typeList button").forEach(b=>b.classList.toggle("on",b.dataset.type===state.type));
+  setSeg("clefSeg","clef",state.clef);
+  setSeg("diffSeg","diff",state.diff);
+  setSeg("countSeg","count",state.count);
+  setSeg("colSeg","col",state.cols);
+  document.getElementById("studioInput").value=state.studio;
+  document.getElementById("titleInput").value=state.title;
+  buildChips();syncInstrInput();
+}
+function loadPreset(name){
+  const p=getPresets()[name];if(!p)return;
+  Object.assign(state,{type:p.type,clef:p.clef,diff:p.diff,count:p.count,cols:p.cols,
+    studio:p.studio,title:p.title,notes:(p.notes||[]).slice(),instr:Object.assign({},p.instr||{})});
+  applyControls();generate();render();
+}
+document.getElementById("savePresetBtn").addEventListener("click",()=>{
+  const el=document.getElementById("presetName");if(!el.value.trim())return;
+  saveCurrentPreset(el.value);el.value="";
+});
+document.getElementById("presetName").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("savePresetBtn").click();});
+document.getElementById("loadPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(n)loadPreset(n);});
+document.getElementById("delPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(!n)return;const all=getPresets();delete all[n];putPresets(all);refreshPresetSelect();});
+
 /* init */
-buildChips();generate();render();
+buildChips();generate();render();syncInstrInput();refreshPresetSelect();
 </script>
 </body>
 </html>
