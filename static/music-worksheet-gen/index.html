@@ -211,6 +211,11 @@
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
   [data-theme="dark"] .toast{background:#e7ecf2;color:#1a1f27;}
 
+  /* ---- clef mix slider ---- */
+  .mix-label{display:flex;justify-content:space-between;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:7px;}
+  .mix-label b{color:var(--accent);font-weight:700;}
+  #mixRange{width:100%;accent-color:var(--accent);cursor:pointer;}
+
   @media (max-width:900px){.layout{grid-template-columns:1fr;}.sidebar{position:static;max-height:none;}}
 
   @media print{
@@ -267,6 +272,12 @@
           <button data-clef="bass">Bass</button>
           <button data-clef="both">Both</button>
         </div>
+      </div>
+
+      <div class="field" id="mixField" style="display:none;">
+        <label>Clef mix</label>
+        <div class="mix-label"><span>Treble <b id="mixT">50%</b></span><span>Bass <b id="mixB">50%</b></span></div>
+        <input type="range" id="mixRange" min="0" max="100" step="5" value="50">
       </div>
 
       <div class="field" id="diffField">
@@ -527,7 +538,7 @@ const INTERVAL_NAMES={1:"Unison",2:"2nd",3:"3rd",4:"4th",5:"5th",6:"6th",7:"7th"
 function intervalName(size){return INTERVAL_NAMES[size]||(size+"th");}
 
 /* ===== STATE ===== */
-const state={type:"name",clef:"treble",diff:"easy",count:12,cols:4,
+const state={type:"name",clef:"treble",diff:"easy",count:12,cols:4,trebleMix:50,
   studio:"Brunner Studios",title:"",showAnswers:false,
   notes:PRESET.treble.easy.slice(),instr:{},problems:[]};
 
@@ -548,7 +559,14 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 function generate(){
   const P=[];
   const both=state.clef==="both";
-  const clefOf=()=> both ? (Math.random()<0.5?"treble":"bass") : state.clef;
+  /* In both-clef mode, honor the treble/bass distribution slider exactly:
+     build the precise clef split for state.count, then shuffle its order. */
+  let clefSeq=[],ci=0;
+  if(both){
+    const nT=Math.round(state.count*(state.trebleMix)/100);
+    clefSeq=shuffle([...Array(nT).fill("treble"),...Array(state.count-nT).fill("bass")]);
+  }
+  const clefOf=()=> both ? clefSeq[ci++] : state.clef;
   /* both mode uses each clef's difficulty preset; single mode honours custom notes */
   const poolOf=(c)=> (both ? PRESET[c][state.diff] : (state.notes.length?state.notes:PRESET[c][state.diff])).map(pitchFromName);
 
@@ -633,6 +651,7 @@ function render(){
   document.getElementById("clefField").style.pointerEvents=isRhythm?"none":"auto";
   document.getElementById("notesField").style.opacity=noNotes?.4:1;
   document.getElementById("notesField").style.pointerEvents=noNotes?"none":"auto";
+  document.getElementById("mixField").style.display=(state.clef==="both"&&!isRhythm)?"":"none";
 }
 function renderCard(i){
   const node=document.getElementById("card-"+i);
@@ -701,6 +720,8 @@ document.getElementById("typeList").addEventListener("click",e=>{
   state.type=b.dataset.type;generate();render();syncInstrInput();
 });
 segSelect(document.getElementById("clefSeg"),"clef",v=>{state.clef=v;state.notes=((PRESET[v]||PRESET.treble)[state.diff]).slice();buildChips();generate();render();});
+function updateMixLabel(){document.getElementById("mixT").textContent=state.trebleMix+"%";document.getElementById("mixB").textContent=(100-state.trebleMix)+"%";}
+document.getElementById("mixRange").addEventListener("input",e=>{state.trebleMix=+e.target.value;updateMixLabel();generate();render();});
 segSelect(document.getElementById("diffSeg"),"diff",v=>{state.diff=v;state.notes=((PRESET[state.clef]||PRESET.treble)[v]).slice();buildChips();generate();render();});
 segSelect(document.getElementById("countSeg"),"count",v=>{state.count=+v;generate();render();});
 segSelect(document.getElementById("colSeg"),"col",v=>{state.cols=+v;render();});
@@ -756,7 +777,7 @@ function refreshPresetSelect(sel){
 function saveCurrentPreset(name){
   name=(name||"").trim();if(!name)return;
   const all=getPresets();
-  all[name]={type:state.type,clef:state.clef,diff:state.diff,count:state.count,cols:state.cols,
+  all[name]={type:state.type,clef:state.clef,diff:state.diff,count:state.count,cols:state.cols,trebleMix:state.trebleMix,
     studio:state.studio,title:state.title,notes:state.notes.slice(),instr:Object.assign({},state.instr)};
   putPresets(all);refreshPresetSelect(name);
 }
@@ -769,13 +790,14 @@ function applyControls(){
   setSeg("diffSeg","diff",state.diff);
   setSeg("countSeg","count",state.count);
   setSeg("colSeg","col",state.cols);
+  document.getElementById("mixRange").value=state.trebleMix;updateMixLabel();
   document.getElementById("studioInput").value=state.studio;
   document.getElementById("titleInput").value=state.title;
   buildChips();syncInstrInput();
 }
 function loadPreset(name){
   const p=getPresets()[name];if(!p)return;
-  Object.assign(state,{type:p.type,clef:p.clef,diff:p.diff,count:p.count,cols:p.cols,
+  Object.assign(state,{type:p.type,clef:p.clef,diff:p.diff,count:p.count,cols:p.cols,trebleMix:p.trebleMix??50,
     studio:p.studio,title:p.title,notes:(p.notes||[]).slice(),instr:Object.assign({},p.instr||{})});
   applyControls();generate();render();
 }
@@ -808,14 +830,14 @@ function refreshWsSelect(sel){
 function saveCurrentWorksheet(name){
   name=(name||"").trim();if(!name)return;
   const all=getWorksheets();
-  all[name]={type:state.type,clef:state.clef,diff:state.diff,count:state.count,cols:state.cols,
+  all[name]={type:state.type,clef:state.clef,diff:state.diff,count:state.count,cols:state.cols,trebleMix:state.trebleMix,
     studio:state.studio,title:state.title,notes:state.notes.slice(),instr:Object.assign({},state.instr),
     showAnswers:state.showAnswers,problems:JSON.parse(JSON.stringify(state.problems))};
   putWorksheets(all);refreshWsSelect(name);
 }
 function loadWorksheet(name){
   const w=getWorksheets()[name];if(!w)return;
-  Object.assign(state,{type:w.type,clef:w.clef,diff:w.diff,count:w.count,cols:w.cols,
+  Object.assign(state,{type:w.type,clef:w.clef,diff:w.diff,count:w.count,cols:w.cols,trebleMix:w.trebleMix??50,
     studio:w.studio,title:w.title,notes:(w.notes||[]).slice(),instr:Object.assign({},w.instr||{}),
     showAnswers:!!w.showAnswers,problems:JSON.parse(JSON.stringify(w.problems||[]))});
   applyControls();
