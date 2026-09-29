@@ -202,6 +202,15 @@
   [data-theme="dark"] .modal p{color:#93a1b2;}
   [data-theme="dark"] .modal-close{color:#93a1b2;}
 
+  /* ---- confirm dialog + toast ---- */
+  .modal .confirm-actions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end;}
+  .modal .confirm-actions .mini-btn{padding:8px 16px;}
+  .mini-btn.danger{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .mini-btn.danger:hover{background:#b4491f;color:#fff;}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:24px;font-family:var(--sans);font-size:13.5px;font-weight:600;box-shadow:0 14px 34px -12px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:200;max-width:80vw;text-align:center;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  [data-theme="dark"] .toast{background:#e7ecf2;color:#1a1f27;}
+
   @media (max-width:900px){.layout{grid-template-columns:1fr;}.sidebar{position:static;max-height:none;}}
 
   @media print{
@@ -370,6 +379,19 @@
       <p>Answers update automatically as you edit.</p>
     </div>
   </div>
+
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <h3 id="confirmTitle">Delete setup?</h3>
+      <p id="confirmMsg"></p>
+      <div class="confirm-actions">
+        <button class="mini-btn" id="confirmCancel">Cancel</button>
+        <button class="mini-btn danger" id="confirmOk">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script>
 /* ===== PITCH MODEL ===== */
@@ -738,12 +760,19 @@ function loadPreset(name){
   applyControls();generate();render();
 }
 document.getElementById("savePresetBtn").addEventListener("click",()=>{
-  const el=document.getElementById("presetName");if(!el.value.trim())return;
-  saveCurrentPreset(el.value);el.value="";
+  const el=document.getElementById("presetName");const name=el.value.trim();if(!name)return;
+  const existed=!!getPresets()[name];
+  saveCurrentPreset(name);el.value="";
+  toast(existed?`Updated setup “${name}”`:`Saved setup “${name}”`);
 });
 document.getElementById("presetName").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("savePresetBtn").click();});
-document.getElementById("loadPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(n)loadPreset(n);});
-document.getElementById("delPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(!n)return;const all=getPresets();delete all[n];putPresets(all);refreshPresetSelect();});
+document.getElementById("loadPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(!n){toast("Pick a setup to load first");return;}loadPreset(n);toast(`Loaded setup “${n}”`);});
+document.getElementById("delPresetBtn").addEventListener("click",()=>{
+  const n=document.getElementById("presetSelect").value;if(!n){toast("Pick a setup to delete first");return;}
+  askConfirm(`Delete the setup “${n}”? This can’t be undone.`,"Delete",()=>{
+    const all=getPresets();delete all[n];putPresets(all);refreshPresetSelect();toast(`Deleted setup “${n}”`);
+  });
+});
 
 /* collapsible sidebar sections (collapsed by default, state remembered) */
 const SEC_KEY="ss_sections";
@@ -761,6 +790,18 @@ function secKey(h){return (h.textContent||"").replace(/[^A-Za-z ]/g,"").trim().t
     });
   });
 })();
+
+/* ---- toast + confirm dialog ---- */
+let toastTimer;
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2200);}
+const confirmModal=document.getElementById("confirmModal");
+let confirmCb=null;
+function askConfirm(msg,okLabel,cb){document.getElementById("confirmMsg").textContent=msg;document.getElementById("confirmOk").textContent=okLabel||"Confirm";confirmCb=cb;confirmModal.classList.add("open");}
+function closeConfirm(){confirmModal.classList.remove("open");confirmCb=null;}
+document.getElementById("confirmCancel").addEventListener("click",closeConfirm);
+document.getElementById("confirmOk").addEventListener("click",()=>{const cb=confirmCb;closeConfirm();if(cb)cb();});
+confirmModal.addEventListener("click",e=>{if(e.target===confirmModal)closeConfirm();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeConfirm();});
 
 /* ---- Tips & Notes modal ---- */
 const helpModal=document.getElementById("helpModal");
