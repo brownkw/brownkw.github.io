@@ -50,6 +50,11 @@
     box-shadow:0 18px 40px -24px var(--shadow);max-height:calc(100vh - 36px);overflow-y:auto;
   }
   .sidebar h2{font-family:var(--sans);font-size:13px;letter-spacing:.8px;text-transform:uppercase;color:var(--ink-soft);margin:0 0 12px;font-weight:700;}
+  .section .sec-body{display:none;}
+  .section.open .sec-body{display:block;}
+  h2.sec-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;user-select:none;}
+  h2.sec-toggle .chev{color:inherit;opacity:.65;font-size:11px;transition:transform .15s;}
+  .section.open h2.sec-toggle .chev{transform:rotate(90deg);}
   .field{margin-bottom:15px;}
   .field > label{display:block;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
   select,input[type=text]{width:100%;padding:9px 11px;font-family:var(--sans);font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--line-strong);border-radius:10px;outline:none;}
@@ -223,7 +228,9 @@
       </div>
 
       <div class="divider"></div>
-      <h2>Setup</h2>
+      <div class="section">
+      <h2 class="sec-toggle">Setup <span class="chev">&#9656;</span></h2>
+      <div class="sec-body">
 
       <div class="field" id="clefField">
         <label>Clef</label>
@@ -272,8 +279,12 @@
         </div>
       </div>
 
+      </div></div><!-- /Setup -->
+
       <div class="divider"></div>
-      <h2>Heading</h2>
+      <div class="section">
+      <h2 class="sec-toggle">Heading <span class="chev">&#9656;</span></h2>
+      <div class="sec-body">
       <div class="field">
         <label>Studio / Teacher</label>
         <input type="text" id="studioInput" value="Brunner Studios">
@@ -282,6 +293,7 @@
         <label>Worksheet Title</label>
         <input type="text" id="titleInput" placeholder="auto from type">
       </div>
+      </div></div><!-- /Heading -->
 
       <div class="actions">
         <button class="btn btn-primary" id="regenBtn">&#8635; &nbsp;Generate New Set</button>
@@ -290,7 +302,9 @@
       </div>
 
       <div class="divider"></div>
-      <h2>Saved Setups</h2>
+      <div class="section">
+      <h2 class="sec-toggle">Saved Setups <span class="chev">&#9656;</span></h2>
+      <div class="sec-body">
       <div class="field">
         <div class="preset-row">
           <select id="presetSelect"><option value="">&mdash; saved setups &mdash;</option></select>
@@ -304,8 +318,9 @@
           <button class="mini-btn" id="savePresetBtn">Save</button>
         </div>
       </div>
+      </div></div><!-- /Saved Setups -->
 
-      <p class="hint"><b>Two ways to control notes:</b> tick the chips above to choose exactly which notes appear, or <b>drag any notehead up and down</b> on the worksheet to set a specific problem by hand. Answers update automatically.</p>
+      <p class="hint"><b>Notes:</b> tick the chips to choose which notes appear, or <b>drag a notehead</b> up/down to set a problem by hand. <b>Click a notehead</b> to add an accidental (cycles ♯ → ♭ → natural). Answers update automatically.</p>
     </aside>
 
     <div class="sheet-wrap">
@@ -396,7 +411,21 @@ function noteAt(cx,cy,opts={}){
   }
   return s;
 }
-/* staff with draggable notes. notes:[{num,filled,cx,role}] pi=problem index */
+/* accidentals: 0 natural, 1 sharp, -1 flat */
+function cycleAcc(a){return a===0?1:(a===1?-1:0);}
+function accSym(a){return a===1?"♯":(a===-1?"♭":"");}
+function accidentalSVG(ax,cy,acc){
+  if(acc===1){ // sharp glyph (natural ~6x19 units; raw coords centred at 87.118,444.803)
+    const s=0.95,gx=(ax-s*87.118).toFixed(2),gy=(cy-s*444.803).toFixed(2);
+    return `<path transform="translate(${gx},${gy}) scale(${s})" fill="var(--staff)" d="M 86.102000,447.45700 L 86.102000,442.75300 L 88.102000,442.20100 L 88.102000,446.88100 L 86.102000,447.45700 z M 90.040000,446.31900 L 88.665000,446.71300 L 88.665000,442.03300 L 90.040000,441.64900 L 90.040000,439.70500 L 88.665000,440.08900 L 88.665000,435.30723 L 88.102000,435.30723 L 88.102000,440.23400 L 86.102000,440.80900 L 86.102000,436.15923 L 85.571000,436.15923 L 85.571000,440.98600 L 84.196000,441.37100 L 84.196000,443.31900 L 85.571000,442.93500 L 85.571000,447.60600 L 84.196000,447.98900 L 84.196000,449.92900 L 85.571000,449.54500 L 85.571000,454.29977 L 86.102000,454.29977 L 86.102000,449.37500 L 88.102000,448.82500 L 88.102000,453.45077 L 88.665000,453.45077 L 88.665000,448.65100 L 90.040000,448.26600 L 90.040000,446.31900 z"/>`;
+  }
+  if(acc===-1){ // flat
+    return `<path d="M ${ax-2} ${cy-13} L ${ax-2} ${cy+4} C ${ax+1.5} ${cy+1.5} ${ax+5} ${cy-1} ${ax+3.4} ${cy-4} C ${ax+2.3} ${cy-6} ${ax-0.3} ${cy-5} ${ax-2} ${cy-2}"
+      fill="none" stroke="var(--staff)" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>`;
+  }
+  return "";
+}
+/* staff with draggable notes. notes:[{num,filled,cx,role,acc}] pi=problem index */
 function staffWithNotes(clef,notes,pi){
   const w=150,h=118,x0=6,x1=w-8;
   let s=svgOpen(w,h);
@@ -406,6 +435,7 @@ function staffWithNotes(clef,notes,pi){
     const y=pitchToY(n.num,clef);
     s+=ledgerLines(n.num,clef,n.cx);
     s+=noteAt(n.cx,y,{filled:n.filled});
+    if(n.acc)s+=accidentalSVG(n.cx-14,y,n.acc);
     // transparent grab target
     s+=`<circle class="note-hit" data-pi="${pi}" data-role="${n.role}" cx="${n.cx}" cy="${y}" r="11" fill="transparent"/>`;
   });
@@ -488,16 +518,16 @@ function cardHTML(prob,i){
   const ans=state.showAnswers,t=state.type;
   let inner="";
   if(t==="name"){
-    const svg=staffWithNotes(prob.clef,[{num:prob.pitch.num,filled:true,cx:80,role:"single"}],i);
-    const blank=ans?`<div class="blank"><span class="answer">${prob.pitch.letter}</span></div>`:`<div class="blank">&nbsp;</div>`;
+    const svg=staffWithNotes(prob.clef,[{num:prob.pitch.num,filled:true,cx:80,role:"single",acc:prob.acc||0}],i);
+    const blank=ans?`<div class="blank"><span class="answer">${prob.pitch.letter}${accSym(prob.acc||0)}</span></div>`:`<div class="blank">&nbsp;</div>`;
     inner=svg+blank;
   }else if(t==="draw"){
-    const notes=ans?[{num:prob.pitch.num,filled:true,cx:98,role:"single"}]:[];
-    inner=`<div class="prompt-label">${prob.pitch.letter}<sub>${prob.pitch.octave}</sub></div>`+staffWithNotes(prob.clef,notes,i);
+    const notes=ans?[{num:prob.pitch.num,filled:true,cx:98,role:"single",acc:prob.acc||0}]:[];
+    inner=`<div class="prompt-label">${prob.pitch.letter}${accSym(prob.acc||0)}<sub>${prob.pitch.octave}</sub></div>`+staffWithNotes(prob.clef,notes,i);
   }else if(t==="interval"){
     const svg=staffWithNotes(prob.clef,[
-      {num:prob.low.num,filled:true,cx:64,role:"low"},
-      {num:prob.high.num,filled:true,cx:96,role:"high"}],i);
+      {num:prob.low.num,filled:true,cx:64,role:"low",acc:prob.lowAcc||0},
+      {num:prob.high.num,filled:true,cx:96,role:"high",acc:prob.highAcc||0}],i);
     const size=Math.abs(prob.high.num-prob.low.num)+1;
     const blank=ans?`<div class="blank small"><span class="answer">${intervalName(size)}</span></div>`:`<div class="blank small">&nbsp;</div>`;
     inner=svg+blank;
@@ -554,6 +584,8 @@ function svgYFromClient(svg,clientY){
 }
 function onDragMove(e){
   if(!drag)return;
+  if(Math.abs(e.clientY-drag.startY)<=3)return;   // ignore tiny jitter (treat as click)
+  drag.moved=true;
   const card=document.getElementById("card-"+drag.pi);
   const svg=card&&card.querySelector("svg");
   if(!svg)return;
@@ -568,12 +600,20 @@ function onDragMove(e){
   else if(drag.role==="high")p.high=pitchFromNum(num);
   renderCard(drag.pi);
 }
-function onDragEnd(){drag=null;document.removeEventListener("pointermove",onDragMove);document.removeEventListener("pointerup",onDragEnd);}
+function onDragEnd(){
+  if(drag&&!drag.moved){   // a click (no drag): cycle the accidental
+    const p=state.problems[drag.pi];
+    const key=drag.role==="single"?"acc":(drag.role==="low"?"lowAcc":"highAcc");
+    p[key]=cycleAcc(p[key]||0);
+    renderCard(drag.pi);
+  }
+  drag=null;document.removeEventListener("pointermove",onDragMove);document.removeEventListener("pointerup",onDragEnd);
+}
 document.getElementById("grid").addEventListener("pointerdown",e=>{
   const hit=e.target.closest(".note-hit");
   if(!hit)return;
   e.preventDefault();
-  drag={pi:+hit.dataset.pi,role:hit.dataset.role};
+  drag={pi:+hit.dataset.pi,role:hit.dataset.role,moved:false,startY:e.clientY};
   document.addEventListener("pointermove",onDragMove);
   document.addEventListener("pointerup",onDragEnd);
 });
@@ -673,6 +713,23 @@ document.getElementById("savePresetBtn").addEventListener("click",()=>{
 document.getElementById("presetName").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("savePresetBtn").click();});
 document.getElementById("loadPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(n)loadPreset(n);});
 document.getElementById("delPresetBtn").addEventListener("click",()=>{const n=document.getElementById("presetSelect").value;if(!n)return;const all=getPresets();delete all[n];putPresets(all);refreshPresetSelect();});
+
+/* collapsible sidebar sections (collapsed by default, state remembered) */
+const SEC_KEY="ss_sections";
+function getSecState(){try{return JSON.parse(localStorage.getItem(SEC_KEY)||"{}");}catch(_){return{};}}
+function secKey(h){return (h.textContent||"").replace(/[^A-Za-z ]/g,"").trim().toLowerCase();}
+(function(){
+  const saved=getSecState();
+  document.querySelectorAll(".sec-toggle").forEach(h=>{
+    const sec=h.closest(".section"),k=secKey(h);
+    if(saved[k])sec.classList.add("open");
+    h.addEventListener("click",()=>{
+      sec.classList.toggle("open");
+      const st=getSecState();st[k]=sec.classList.contains("open");
+      try{localStorage.setItem(SEC_KEY,JSON.stringify(st));}catch(_){}
+    });
+  });
+})();
 
 /* init */
 buildChips();generate();render();syncInstrInput();refreshPresetSelect();
