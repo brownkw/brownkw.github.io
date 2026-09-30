@@ -578,9 +578,9 @@ function generate(){
   const poolOf=(c)=> (both ? PRESET[c][state.diff] : (state.notes.length?state.notes:PRESET[c][state.diff])).map(pitchFromName);
 
   if(state.type==="name"||state.type==="draw"){
-    /* Draw the Note gates accidentals by difficulty: none on easy,
+    /* Name & Draw the Note gate accidentals by difficulty: none on easy,
        ~35% on medium, ~60% on hard (randomly sharp or flat). */
-    const accChance=state.type==="draw"?(state.diff==="easy"?0:state.diff==="medium"?0.35:0.6):0;
+    const accChance=state.diff==="easy"?0:state.diff==="medium"?0.35:0.6;
     const drawAcc=()=> Math.random()<accChance ? (Math.random()<0.5?1:-1) : 0;
     if(both){
       for(let i=0;i<state.count;i++){const c=clefOf();P.push({clef:c,pitch:rand(poolOf(c)),acc:drawAcc()});}
