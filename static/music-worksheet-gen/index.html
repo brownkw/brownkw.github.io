@@ -130,6 +130,7 @@
   .card .num{align-self:flex-start;font-family:var(--sans);font-weight:700;font-size:14px;color:var(--accent);background:var(--paper-2);border:1px solid var(--line);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .card svg{display:block;margin:4px auto 6px;touch-action:none;}
   .note-hit{cursor:ns-resize;}
+  .clef-hit{cursor:pointer;}
   .note-hit:hover ~ .notehead-vis,.note-grab{opacity:1;}
   .prompt-label{font-family:var(--sans);font-size:26px;font-weight:600;margin:6px 0 -6px;color:var(--ink);}
   .prompt-label sub{font-size:15px;color:var(--ink-soft);}
@@ -230,6 +231,7 @@
     .card{border-color:#bbb;background:#fff !important;}
     .card .num{background:transparent !important;}
     .note-hit{display:none;}
+    .clef-hit{display:none;}
     @page{margin:14mm;}
   }
 </style>
@@ -407,6 +409,7 @@
       <h3 id="helpTitle">Tips &amp; Notes</h3>
       <p>Under <b>Notes to use</b>, click the note buttons to choose which pitches appear, or <b>drag a notehead</b> up or down to set a problem by hand.</p>
       <p><b>Click a notehead</b> to add an accidental (cycles &#9839; &rarr; &#9837; &rarr; natural).</p>
+      <p><b>Click the clef</b> to switch that problem between treble and bass.</p>
       <p>Answers update automatically as you edit.</p>
       <p><b>Saved Setups</b> store your options (type, clef, difficulty, notes, and directions) &mdash; loading one makes a <b>fresh</b> set of random problems from those settings.</p>
       <p><b>Saved Worksheets</b> store the <b>exact problems</b> shown, including notes you dragged or accidentals you added, so you can reload and reprint the same sheet later.</p>
@@ -469,7 +472,7 @@ const TREBLE_PATH="M 201.68015,653.12212 C 189.21313,655.67886 177.65942,662.519
 const BASS_PATH="M 1239,8245 C 1397,8138 1515,8057 1591,8001 C 1667,7946 1747,7877 1829,7795 C 1911,7713 1980,7620 2036,7517 C 2080,7441 2118,7353 2149,7253 C 2180,7154 2196,7058 2199,6967 C 2199,6882 2188,6801 2165,6725 C 2143,6648 2105,6585 2051,6534 C 1997,6484 1927,6459 1840,6459 C 1756,6459 1677,6476 1603,6509 C 1530,6543 1478,6597 1449,6673 C 1449,6680 1445,6689 1439,6702 C 1441,6718 1449,6730 1464,6739 C 1479,6748 1492,6752 1504,6752 C 1510,6752 1527,6749 1553,6743 C 1580,6737 1602,6733 1620,6733 C 1673,6733 1720,6752 1763,6789 C 1805,6826 1826,6871 1826,6924 C 1826,6962 1815,6998 1794,7031 C 1773,7064 1744,7091 1707,7110 C 1670,7130 1629,7139 1585,7139 C 1505,7139 1437,7115 1381,7066 C 1326,7016 1298,6953 1298,6874 C 1298,6773 1329,6686 1390,6612 C 1452,6538 1530,6483 1626,6446 C 1721,6408 1817,6390 1915,6390 C 2022,6390 2124,6417 2219,6472 C 2315,6526 2390,6601 2446,6694 C 2502,6788 2531,6888 2531,6996 C 2531,7188 2467,7366 2339,7531 C 2211,7696 2053,7839 1864,7961 C 1738,8044 1534,8156 1253,8297 L 1239,8245 z M 2628,6698 C 2628,6662 2641,6632 2667,6608 C 2692,6583 2723,6571 2760,6571 C 2792,6571 2822,6585 2849,6612 C 2876,6638 2889,6669 2889,6703 C 2889,6739 2875,6770 2849,6795 C 2821,6819 2790,6831 2755,6831 C 2718,6831 2688,6819 2664,6792 C 2640,6766 2628,6735 2628,6698 z M 2628,7222 C 2628,7186 2641,7155 2665,7131 C 2690,7106 2721,7094 2760,7094 C 2792,7094 2821,7107 2849,7134 C 2875,7161 2889,7190 2889,7222 C 2889,7261 2876,7292 2851,7317 C 2825,7342 2795,7355 2760,7355 C 2721,7355 2690,7342 2665,7318 C 2641,7294 2628,7262 2628,7222 z";
 /* map each source space -> our staff via the source's own line spacing/bottom line */
 const tblScale=S/120,   tblTy=BOTTOM_Y-835.78396*tblScale, tblTx=6-tblScale*6.324;
-const bassScale=S/590.5, bassTy=BOTTOM_Y-8740*bassScale,   bassTx=8-bassScale*1239;
+const bassScale=S/533.8, bassTy=(BOTTOM_Y-5)-8297*bassScale, bassTx=8-bassScale*1239;
 function clefGlyph(clef){
   const p=clef==="treble" ? {d:TREBLE_PATH,s:tblScale,tx:tblTx,ty:tblTy}
                           : {d:BASS_PATH,  s:bassScale,tx:bassTx,ty:bassTy};
@@ -513,6 +516,8 @@ function staffWithNotes(clef,notes,pi){
   let s=svgOpen(w,h);
   s+=staffLines(x0,x1);
   s+=clefGlyph(clef);
+  // transparent target: click the clef to switch this problem's clef
+  s+=`<rect class="clef-hit" data-pi="${pi}" x="2" y="16" width="34" height="86" fill="transparent"><title>Click to switch clef</title></rect>`;
   notes.forEach(n=>{
     const y=pitchToY(n.num,clef);
     s+=ledgerLines(n.num,clef,n.cx);
@@ -716,6 +721,20 @@ document.getElementById("grid").addEventListener("pointerdown",e=>{
   drag={pi:+hit.dataset.pi,role:hit.dataset.role,moved:false,startY:e.clientY};
   document.addEventListener("pointermove",onDragMove);
   document.addEventListener("pointerup",onDragEnd);
+});
+/* click the clef glyph to switch this problem between treble & bass.
+   Shift the note pitch(es) by the clef offset so the notehead stays put —
+   only the clef symbol and the note's name/answer change. */
+document.getElementById("grid").addEventListener("click",e=>{
+  const ch=e.target.closest(".clef-hit");
+  if(!ch)return;
+  const pi=+ch.dataset.pi,p=state.problems[pi];
+  const nc=p.clef==="treble"?"bass":"treble",delta=REF[nc]-REF[p.clef];
+  p.clef=nc;
+  if(p.pitch)p.pitch=pitchFromNum(p.pitch.num+delta);
+  if(p.low) p.low =pitchFromNum(p.low.num+delta);
+  if(p.high)p.high=pitchFromNum(p.high.num+delta);
+  renderCard(pi);
 });
 
 /* ===== WIRING ===== */
