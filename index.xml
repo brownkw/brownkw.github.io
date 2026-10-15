@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wayne Brown</title><link>https://presaleswayne.com/</link><description>Recent content on Wayne Brown</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://presaleswayne.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Normalizing Imposter Syndrome -- Partners and Alliances</title><link>https://presaleswayne.com/p/normalizing-imposter-syndrome-partners-alliances/</link><pubDate>Fri, 03 Apr 2026 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/p/normalizing-imposter-syndrome-partners-alliances/</guid><description>&lt;p&gt;I have this &amp;ldquo;hero version&amp;rdquo; of myself that lives entirely in my head right before a meeting starts.&lt;/p&gt;
+&lt;p&gt;In that version, I’m a total powerhouse. I’m authoritative, I’m crisp, and I’m about to deliver an intro so commanding people might actually want to stand up and cheer. Then the &amp;ldquo;Join&amp;rdquo; button turns blue. And suddenly&amp;hellip; I’m just Wayne&amp;hellip; or Jeff.&lt;/p&gt;
+&lt;p&gt;There’s usually a pretty massive gap between the cinematic guy I’ve prepped in my mind and the actual human in the red polo just trying not to stumble over his own name. For a long time, I really beat myself up over that. I figured I needed to close that gap to be a &amp;ldquo;successful&amp;rdquo; partner solutions architect. But honestly? Partners don&amp;rsquo;t usually want to work with a movie character anyway. They want an authentic person, even a person who occasionally glitches during his or her own introduction.&lt;/p&gt;
+&lt;p&gt;Give yourself some grace if your internal monologue is a lot more epic than your actual output today. You’re doing fine. Who else feels like they’re cosplaying for the first five minutes of every meeting?&lt;/p&gt;
+&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/gMlhm7aunYM"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>My Favorite Mister Rogers Moment</title><link>https://presaleswayne.com/p/my-favorite-mister-rogers-moment/</link><pubDate>Mon, 18 Aug 2025 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/p/my-favorite-mister-rogers-moment/</guid><description>&lt;div class="video-wrapper"&gt;
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/1YjNz9JidUs"
+allowfullscreen
+title="YouTube Video"
+&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;</description></item><item><title>Writing Voice &amp; Style Guide</title><link>https://presaleswayne.com/writing-profile/</link><pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/writing-profile/</guid><description>&lt;p&gt;This is my personal reference for writing style and voice across
+different contexts. Six modes, each with its own shape. The hard rules
+apply to all of them.&lt;/p&gt;
+&lt;p&gt;Workflow: draft for meaning → apply the right mode below → run
+&lt;strong&gt;Humanizer&lt;/strong&gt; as a final pass (if it’s available) before publishing or
+sharing broadly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="how-to-choose-a-mode"&gt;How to Choose a Mode
+&lt;/h2&gt;&lt;p&gt;Answer these three questions in order. Stop at the first answer that
+resolves.&lt;/p&gt;
+&lt;h3 id="question-1-what-is-the-primary-job-of-this-output"&gt;Question 1: What is the primary job of this output?
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;If the primary job is…&lt;/th&gt;
+&lt;th&gt;Use&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Rendering a verdict on something (pass/fail/conditional)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mode 3&lt;/strong&gt; — Structured Assessment&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Diagnosing a structural or systemic problem&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mode 5&lt;/strong&gt; — Structural Diagnostic&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Explaining a standard, requirement, or process to an external audience&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mode 6&lt;/strong&gt; — Program/Policy Explainer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Getting information to someone fast (ticket, update, handoff, meeting notes)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mode 4&lt;/strong&gt; — Operational/Async&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Helping someone understand or do something technical&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mode 2&lt;/strong&gt; — Technical/Advisory&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Being visible as a person (LinkedIn, announcement, thank-you, transition)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mode 1&lt;/strong&gt; — Public/Social&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="question-2-is-this-a-long-document-that-needs-more-than-one-mode"&gt;Question 2: Is this a long document that needs more than one mode?
+&lt;/h3&gt;&lt;p&gt;Some documents blend modes. Let structure determine the primary mode and
+apply secondary modes at the section level. Common combinations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Assessment that includes a requirements section&lt;/strong&gt; → Mode 3
+structure, Mode 6 for the requirements section&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Technical walkthrough with an advisory close&lt;/strong&gt; → Mode 2 throughout;
+the advisory close is a Mode 2 sub-pattern, not a separate mode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jira ticket on a strategic issue&lt;/strong&gt; → Mode 4 always; the weight of
+the content doesn&amp;rsquo;t change the artifact type&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="question-3-still-ambiguous-use-this-tiebreaker"&gt;Question 3: Still ambiguous? Use this tiebreaker.
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If it lives in Jira → &lt;strong&gt;Mode 4&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the reader needs to &lt;em&gt;do&lt;/em&gt; something after reading it → Mode 2 or
+Mode 4 depending on artifact type&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the reader needs to &lt;em&gt;decide&lt;/em&gt; something after reading it → &lt;strong&gt;Mode
+3&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If the reader needs to &lt;em&gt;understand why something is broken&lt;/em&gt; → &lt;strong&gt;Mode
+5&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If none of those fit → default to &lt;strong&gt;Mode 2&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="context-modifiers"&gt;Context Modifiers
+&lt;/h2&gt;&lt;p&gt;Mode controls structure and purpose. Audience and context control
+register and latitude. They are independent dials — selecting a mode
+doesn&amp;rsquo;t lock the tone.&lt;/p&gt;
+&lt;p&gt;After selecting a mode, check these implicit signals to adjust how the
+mode is applied:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Signal&lt;/th&gt;
+&lt;th&gt;What it adjusts&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Internal audience&lt;/td&gt;
+&lt;td&gt;Looser formality; humor is on the table; less ceremony around structure&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Trusted relationship (known colleague, close partner)&lt;/td&gt;
+&lt;td&gt;Conversational tone can increase; direct observations land without softening&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;External / partner-facing&lt;/td&gt;
+&lt;td&gt;Reduce humor; increase precision; no meme or GIF energy&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Public / broad visibility&lt;/td&gt;
+&lt;td&gt;Most conservative register within the mode; Humanizer pass is non-negotiable&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;High-stakes or sensitive topic&lt;/td&gt;
+&lt;td&gt;Dial back humor regardless of audience; directness stays, levity goes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="explicit-override-rule"&gt;Explicit Override Rule
+&lt;/h2&gt;&lt;div data-type="panel-info"&gt;
+&lt;p&gt;&lt;strong&gt;If Wayne explicitly states a permission or constraint in the request,
+that instruction overrides mode defaults and context modifier inferences
+— always, without exception.&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;This is internal so humor is fine&amp;rdquo;&lt;/em&gt; → humor is on the table even if
+mode defaults would suppress it&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;Keep it warm even though it&amp;rsquo;s a formal assessment&amp;rdquo;&lt;/em&gt; → dial up warmth
+within Mode 3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;No jokes here — this is sensitive&amp;rdquo;&lt;/em&gt; → humor is off regardless of
+audience or mode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;&amp;ldquo;Loosen it up&amp;rdquo;&lt;/em&gt; → increase conversational register regardless of what
+context signals suggest&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Context modifiers are inferences — the agent is making a judgment call
+based on available signals. Explicit instructions are facts. An
+inference can be wrong. An explicit instruction from Wayne cannot be
+overridden by the agent&amp;rsquo;s own read of the situation.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="the-6-modes-at-a-glance"&gt;The 6 Modes at a Glance
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Mode&lt;/th&gt;
+&lt;th&gt;Use it for&lt;/th&gt;
+&lt;th&gt;Core instinct&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1. Public / Social&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;LinkedIn posts, intro posts, thank-you notes, transition announcements&lt;/td&gt;
+&lt;td&gt;Warm, direct, lightly playful. Real person, not brand announcement.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;2. Technical / Advisory&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Walkthroughs, lab guides, partner guidance, implementation notes&lt;/td&gt;
+&lt;td&gt;Methodical. Explain the why before the how. Orient before you instruct.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3. Structured Assessment&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Partner solution reviews, readiness evaluations&lt;/td&gt;
+&lt;td&gt;Lead with the verdict. First person. Specific praise. Direct flags.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;4. Operational / Async&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Jira tickets, TL;DRs, meeting notes, status updates, escalations&lt;/td&gt;
+&lt;td&gt;Respect the reader&amp;rsquo;s time. Compress without losing meaning.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;5. Structural Diagnostic&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Postmortems, internal strategy memos, critical program analyses&lt;/td&gt;
+&lt;td&gt;One sharp thesis. Cause → effect chains. No diplomatic softening.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;6. Program / Policy Explainer&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Partner-facing requirements, onboarding docs, process guides&lt;/td&gt;
+&lt;td&gt;State the requirement + the why. Defuse objections early. Not bureaucratic.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="mode-details"&gt;Mode Details
+&lt;/h2&gt;&lt;p&gt;Mode 1: Public / Social Voice&lt;/p&gt;
+&lt;p&gt;Use this for LinkedIn posts, intro posts, transition notes, and
+thank-you messages.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Strong human opening line — create momentum fast&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Warm, direct, reflective, conversational&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Grounded in real experience — not brand language&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gratitude shows up specifically, not generically&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Light humor or personality when it fits naturally; warm and direct
+when it doesn&amp;rsquo;t&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Short paragraphs, 150–300 words for LinkedIn&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Avoid:&lt;/strong&gt; corporate excitement, polished marketing language, vague
+inspiration without a concrete point.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rewrite prompt:&lt;/strong&gt; Rewrite this in my public voice. Warm, direct,
+lightly playful, reflective, human. Conversational and grounded. Let
+gratitude and personality show naturally — don&amp;rsquo;t let it become
+marketing language or corporate excitement. The result should feel
+like a real person talking to peers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Too generic and corporate:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I&amp;rsquo;m thrilled to share that I&amp;rsquo;ve recently joined a new team and I&amp;rsquo;m
+excited about the opportunities ahead. I&amp;rsquo;m grateful for the support of
+my colleagues and look forward to contributing to some incredible
+work. Onward!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Closer to Wayne&amp;rsquo;s public voice:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;And now for something completely different.&lt;/p&gt;
+&lt;p&gt;After five years building partner practices and watching a lot of
+migrations go sideways, I&amp;rsquo;m moving into a role where I get to help fix
+the part that usually breaks first: the architecture decisions nobody
+makes explicitly until they&amp;rsquo;re already in production.&lt;/p&gt;
+&lt;p&gt;Grateful to the people who made the last chapter worth it. You know
+who you are.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mode 2: Technical / Advisory Voice&lt;/p&gt;
+&lt;p&gt;Use this for workshop content, walkthroughs, partner guidance,
+recommendations, and advisory writing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Open with context — who is this for and why does this decision matter&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Explain the purpose before the action (not just &amp;ldquo;do this&amp;rdquo; — &amp;ldquo;this file
+is used for X&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Orient the reader in the workspace before asking them to edit anything&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Break work into discrete steps; number when sequence matters, bullet
+when it doesn&amp;rsquo;t&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use comparison anchors to make unfamiliar concepts land&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Acknowledge tradeoffs honestly — &amp;ldquo;this is a current limitation&amp;rdquo; or
+&amp;ldquo;we&amp;rsquo;re taking a shortcut here&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Code blocks always preceded by a sentence explaining what the block
+does&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Callout patterns:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TIP&lt;/strong&gt; — shortcuts, gotchas, time-savers&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; — caveats, limitations, unexpected behavior&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ALERT&lt;/strong&gt; — things that commonly go wrong and how to recover (calm,
+not alarming)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;BEST PRACTICE&lt;/strong&gt; — when a shortcut is being taken; what production
+should look like instead&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;DEEP DIVE&lt;/strong&gt; — optional rabbit hole for people who want to go further&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rewrite prompt:&lt;/strong&gt; Rewrite this in my technical/advisory voice.
+Straightforward, practical, methodical. Orient the reader first and
+explain the why before diving into detail. Warm and human, but
+prioritize clarity, sequencing, and usefulness. If instructional:
+guide step by step. If advisory: make it concrete and actionable.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mode 3: Structured Assessment Voice&lt;/p&gt;
+&lt;p&gt;Use this for formal reviews, partner solution assessments, program evaluations, and readiness reviews.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shape of a good assessment:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Bottom line first.&lt;/strong&gt; Verdict before details. No suspense, no burying
+the lead.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Short executive summary.&lt;/strong&gt; What the thing is, what stands out, what
+needs work. 3–5 short paragraphs, no sub-headers yet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Section-by-section breakdown.&lt;/strong&gt; Each section: what was reviewed,
+what was found, what passes, what needs work. Use ✅ PASS / ⚠️ NEEDS
+WORK / ❌ BLOCKER labels.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Phased next steps.&lt;/strong&gt; Phase 1 = blockers (do now). Phase 2 = polish
+(next 30 days). Phase 3 = external dependencies. Never mix urgency
+levels.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ldquo;Why this matters&amp;rdquo; close.&lt;/strong&gt; One short paragraph connecting back to
+the customer, market, or strategic context.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice signals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;First person is expected — &amp;ldquo;I looked at the 13 security policy PDFs
+and the trust controls file.&amp;rdquo; Vague sourcing undermines credibility.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Praise specifically — not &amp;ldquo;the architecture is strong&amp;rdquo; but what
+specifically makes it strong and why it matters&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Flag gaps without softening them — &amp;ldquo;We need the AI governance roadmap
+before this can flip to Green&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Natural parentheticals to add context without breaking flow&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rewrite prompt:&lt;/strong&gt; Rewrite this in my assessment voice. Lead with the
+verdict. Follow with a short executive summary in plain language.
+Break it down section by section with pass/flag/block labels. Flag
+gaps directly. Praise specifically with named evidence. Close with a
+&amp;ldquo;why this matters&amp;rdquo; paragraph. Keep first person. Separate blockers
+from polish items and phase the next steps clearly.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mode 4: Operational / Async Voice&lt;/p&gt;
+&lt;p&gt;Use this for Jira issues, Jira comments, meeting notes, TL;DRs, status
+updates, and async handoffs.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Structure by artifact:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jira issue:&lt;/strong&gt; One-line opener → Goal (one sentence) → Background
+(only what the assignee needs) → Acceptance Criteria (checklist,
+binary) → Implementation Notes (only if non-obvious)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jira comment / escalation:&lt;/strong&gt; TL;DR first → most recent development →
+named next steps with owners&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Meeting notes:&lt;/strong&gt; Date / attendees / purpose (3 lines) → what was
+decided → risks and open questions → who owns what next (name attached
+to each action)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Status update:&lt;/strong&gt; Current state → what changed → what&amp;rsquo;s blocked and
+by whom → what&amp;rsquo;s next and by when&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice signals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Name names — &amp;ldquo;I have a call with Cannon Lafferty next week&amp;rdquo; beats &amp;ldquo;a
+call is scheduled&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;State blockers plainly — &amp;ldquo;Blocked on legal signing off&amp;rdquo; not &amp;ldquo;there are
+some pending dependencies&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Own the action — &amp;ldquo;I&amp;rsquo;m following up Thursday&amp;rdquo; not &amp;ldquo;follow-up is
+planned&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One fact per bullet — if a bullet runs 3 lines, it&amp;rsquo;s a paragraph with
+a dot in front of it; split it&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Link, don&amp;rsquo;t embed — link the meeting notes and give the TL;DR in the
+comment&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rewrite prompt:&lt;/strong&gt; Rewrite this in my operational voice. Get the
+right information to the reader as fast as possible. Use the right
+structure for the artifact type. Name names. State blockers plainly.
+Own actions explicitly. One fact per bullet. Don&amp;rsquo;t reopen context the
+reader already has.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mode 5: Structural Diagnostic Voice&lt;/p&gt;
+&lt;p&gt;Use this for postmortems, internal strategy memos, critical analyses,
+and structural reviews. This is the mode for writing that is meant to be
+useful, not comfortable.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shape of a good diagnostic:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Single sharp thesis in the opening.&lt;/strong&gt; One or two sentences naming
+the real problem — not the symptom. Everything else exists to prove
+this sentence true.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Historical grounding.&lt;/strong&gt; What existed before the problem? What
+changed? Gives the reader a before/after frame.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Cause → effect chains, not lists of complaints.&lt;/strong&gt; Show how one
+structural gap led to a specific outcome. Link them explicitly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Evidence, not assertion.&lt;/strong&gt; Name specific pilots, documents,
+decisions. Vague diagnostic writing is opinion. Specific diagnostic
+writing is analysis.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Short declarative sentences as rhetorical punctuation.&lt;/strong&gt; After a
+chain of evidence, land it plainly: &amp;ldquo;That is not scaling. That is
+filtering your customer list until the problem temporarily
+disappears.&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;A summary that doesn&amp;rsquo;t soften.&lt;/strong&gt; If the diagnosis is hard, the
+summary should be hard.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice signals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Write the sentence you actually believe, not the diplomatic version&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Past tense for structural failures — &amp;ldquo;was never built&amp;rdquo; not &amp;ldquo;has not
+been built&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quotation is credibility — quote source material directly when it
+makes the point better than paraphrase&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The closing is not a recommendation — &amp;ldquo;here is what is broken and why&amp;rdquo;
+is a complete piece of writing&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rewrite prompt:&lt;/strong&gt; Rewrite this in my structural diagnostic voice.
+Open with the thesis — one or two sentences naming the actual problem.
+Build the case: establish the historical baseline, then trace each
+structural gap to its specific consequence. Long sentences build
+evidence; short sentences deliver verdicts. Quote source material
+where it makes the point better than paraphrase. Name specific cases
+and decisions. Do not soften the findings. Close with a short &amp;ldquo;why
+this matters&amp;rdquo; section.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Mode 6: Program / Policy Explainer Voice&lt;/p&gt;
+&lt;p&gt;Use this for partner-facing program documentation, requirements guides,
+onboarding content, and process explanations.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shape of a good explainer:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Open by stating what this is for and defusing the most likely
+objection.&lt;/strong&gt; Partners reading a requirements doc are often bracing for
+more process. Address that directly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;State the requirement, then immediately explain the &amp;ldquo;why.&amp;rdquo;&lt;/strong&gt; Not
+&amp;ldquo;you must have a governance plan&amp;rdquo; but &amp;ldquo;clear ownership is how
+decisions get made when something goes sideways.&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Acknowledge what they probably already have.&lt;/strong&gt; Most experienced
+partners already produce the artifacts you&amp;rsquo;re asking for. Say so.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Show the gap, not the judgment.&lt;/strong&gt; &amp;ldquo;Missing&amp;rdquo; is a gap. &amp;ldquo;Insufficient&amp;rdquo;
+is a judgment. Describe the gap concretely.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Close with what success looks like.&lt;/strong&gt; Partners should leave knowing
+exactly what a passing submission looks like.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Voice signals:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Collaborative, not top-down — &amp;ldquo;here&amp;rsquo;s what we&amp;rsquo;re looking for and why&amp;rdquo;
+not &amp;ldquo;here&amp;rsquo;s what you must provide&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reduce jargon or define it immediately when it appears&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Short sentences for requirements; slightly longer for explanations&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Rewrite prompt:&lt;/strong&gt; Rewrite this in my program/policy explainer voice.
+Open by stating the purpose and defusing the most likely partner
+objection. State each requirement, then immediately explain the why.
+Acknowledge what partners likely already have. Keep it collaborative
+and direct, not bureaucratic. Close with what success looks like.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Too bureaucratic and top-down:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Partners must submit a governance plan that identifies key
+stakeholders, decision-making authority, and escalation paths. Failure
+to provide this documentation may result in delays to the review
+process.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Closer to Wayne&amp;rsquo;s program/policy explainer voice:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The governance section exists for one reason: when something goes
+sideways mid-migration, someone needs to be able to make a call fast.
+The plan doesn&amp;rsquo;t need to be long — it needs to name the people who own
+the decisions and how they reach each other.&lt;/p&gt;
+&lt;p&gt;Most structured migration practices already have this. If yours does,
+you&amp;rsquo;re mostly documenting what you already do. If it doesn&amp;rsquo;t, this is
+the right moment to build it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="core-voice-profile"&gt;Core Voice Profile
+&lt;/h2&gt;&lt;h3 id="tone"&gt;Tone
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Conversational, but still professional&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Straightforward and clear&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Warm and human&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lightly humorous or playful when it fits naturally — when in doubt,
+leave it out; warm and direct is always the safer default&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Supportive and collaborative&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Confident without sounding performative&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="strength-driven-instincts"&gt;Strength-driven instincts
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Creator&lt;/strong&gt; — reframe or reorganize ideas so they make more sense&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stimulator&lt;/strong&gt; — pay attention to how the writing will land
+emotionally, not just whether it&amp;rsquo;s accurate&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Advisor&lt;/strong&gt; — stay practical, concrete, and useful&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Teacher&lt;/strong&gt; — help the reader understand, not just comply&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="common-stylistic-patterns"&gt;Common stylistic patterns
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Short opening lines that create momentum: &amp;ldquo;Let&amp;rsquo;s talk about&amp;hellip;&amp;rdquo;, &amp;ldquo;So
+it begins&amp;hellip;&amp;rdquo;, &amp;ldquo;And now for something completely different&amp;hellip;&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Short paragraphs instead of dense blocks&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Direct statements over over-explaining&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Natural enthusiasm without hype language&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Less is more — especially in presentations&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="pacing-by-channel"&gt;Pacing by Channel
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Channel&lt;/th&gt;
+&lt;th&gt;Target length&lt;/th&gt;
+&lt;th&gt;Key constraint&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Slack message&lt;/td&gt;
+&lt;td&gt;2–5 lines&lt;/td&gt;
+&lt;td&gt;One clear point, no ceremony&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LinkedIn post&lt;/td&gt;
+&lt;td&gt;150–300 words&lt;/td&gt;
+&lt;td&gt;Strong opening line, 3–5 short paragraphs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Technical step&lt;/td&gt;
+&lt;td&gt;1 short paragraph + code block&lt;/td&gt;
+&lt;td&gt;Concept before action, always&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lab or walkthrough section&lt;/td&gt;
+&lt;td&gt;2–4 paragraphs + numbered steps&lt;/td&gt;
+&lt;td&gt;Scenario first, callouts to layer depth&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Partner summary&lt;/td&gt;
+&lt;td&gt;200–400 words&lt;/td&gt;
+&lt;td&gt;Business framing, practical conclusion&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Advisory note&lt;/td&gt;
+&lt;td&gt;3–6 sentences&lt;/td&gt;
+&lt;td&gt;State the issue, explain why, give the recommendation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jira issue description&lt;/td&gt;
+&lt;td&gt;100–250 words&lt;/td&gt;
+&lt;td&gt;Goal in one sentence, ACs are checkboxes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Status update&lt;/td&gt;
+&lt;td&gt;3–5 sentences&lt;/td&gt;
+&lt;td&gt;State, delta, blocker, next&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="hard-rule-no-ai-sounding-language"&gt;Hard Rule: No AI-Sounding Language
+&lt;/h2&gt;&lt;p&gt;This applies to every mode, every time. Not a style preference — a hard
+constraint. Writing should read like a real person wrote it without
+assistance.&lt;/p&gt;
+&lt;p&gt;Banned transitional filler&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;In conclusion&amp;rdquo; / &amp;ldquo;To conclude&amp;rdquo; / &amp;ldquo;In summary&amp;rdquo; / &amp;ldquo;To summarize&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;In the realm of&amp;rdquo; / &amp;ldquo;In the world of&amp;rdquo; / &amp;ldquo;In the landscape of&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;It&amp;rsquo;s worth noting that&amp;rdquo; / &amp;ldquo;It is important to note that&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;That being said&amp;rdquo; / &amp;ldquo;With that said&amp;rdquo; / &amp;ldquo;Having said that&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;At the end of the day&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Moving forward&amp;rdquo; / &amp;ldquo;Going forward&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;To that end&amp;rdquo; / &amp;ldquo;As such&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Banned inflated adjectives and hype words&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Crucial&amp;rdquo;, &amp;ldquo;Vital&amp;rdquo;, &amp;ldquo;Pivotal&amp;rdquo; — say &amp;ldquo;important&amp;rdquo; or just say why it
+matters&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Robust&amp;rdquo; — describe what it actually does instead&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Comprehensive&amp;rdquo; — be specific about what&amp;rsquo;s covered&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Seamless&amp;rdquo; — this word has never been earned&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Powerful&amp;rdquo;, &amp;ldquo;Transformative&amp;rdquo;, &amp;ldquo;Revolutionary&amp;rdquo; — never&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Game-changer&amp;rdquo; / &amp;ldquo;Cutting-edge&amp;rdquo; / &amp;ldquo;State-of-the-art&amp;rdquo; / &amp;ldquo;Best-in-class&amp;rdquo;
+/ &amp;ldquo;World-class&amp;rdquo; — never&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Innovative&amp;rdquo; / &amp;ldquo;Innovation&amp;rdquo; — only if no more specific word exists&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Leverage&amp;rdquo; as a verb — say &amp;ldquo;use&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Utilize&amp;rdquo; — say &amp;ldquo;use&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Streamline&amp;rdquo; / &amp;ldquo;Unlock&amp;rdquo; / &amp;ldquo;Drive&amp;rdquo; (as a metaphor) / &amp;ldquo;Enable&amp;rdquo;
+(overused) / &amp;ldquo;Empower&amp;rdquo; / &amp;ldquo;Elevate&amp;rdquo; / &amp;ldquo;Unpack&amp;rdquo; / &amp;ldquo;Deep dive&amp;rdquo; / &amp;ldquo;Delve
+into&amp;rdquo; / &amp;ldquo;Explore&amp;rdquo; (when you mean &amp;ldquo;explain&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Banned AI sentence openers&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Certainly&amp;rdquo; / &amp;ldquo;Absolutely&amp;rdquo; / &amp;ldquo;Of course&amp;rdquo; / &amp;ldquo;Sure&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Great question&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;I&amp;rsquo;d be happy to&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Ultimately,&amp;rdquo; / &amp;ldquo;Essentially,&amp;rdquo; / &amp;ldquo;Fundamentally,&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;Notably,&amp;rdquo; / &amp;ldquo;Importantly,&amp;rdquo; / &amp;ldquo;Interestingly,&amp;rdquo; / &amp;ldquo;Surprisingly,&amp;rdquo; /
+&amp;ldquo;Undoubtedly,&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;ldquo;It goes without saying&amp;rdquo; / &amp;ldquo;Needless to say&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Banned AI structural patterns&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ending a paragraph by restating what was just said&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Starting consecutive paragraphs with the same structure (&amp;ldquo;This is&amp;hellip;
+This allows&amp;hellip; This ensures&amp;hellip;&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lists that go to 7, 8, or 9 items when 3–5 would be stronger&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Headers that announce what a section does rather than what it says
+(&amp;ldquo;Overview of&amp;hellip;&amp;rdquo; / &amp;ldquo;Discussion of&amp;hellip;&amp;rdquo;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wrapping up with &amp;ldquo;I hope this helps&amp;rdquo; or any variant&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Em dash used as a rhetorical flourish in every other sentence — one
+per piece, maximum&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Comma-separated rhetorical triplets at the end of sentences:
+&amp;ldquo;&amp;hellip;clarity, confidence, and capability.&amp;rdquo; Break it up or rewrite
+entirely.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ellipses (&amp;hellip;) used for stylistic trailing off in formal writing&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div data-type="panel-info"&gt;
+&lt;p&gt;&lt;strong&gt;The antidote to AI language is specificity.&lt;/strong&gt; Instead of &amp;ldquo;this is a
+robust solution&amp;rdquo; → say what it actually does and how well. Instead of
+&amp;ldquo;ultimately, this comes down to&amp;hellip;&amp;rdquo; → just say what it comes down to. If
+a sentence can be removed without losing meaning, remove it.&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id="workflow"&gt;Workflow
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Draft or rewrite for meaning and structure&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Apply the right voice mode from above&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run the &lt;strong&gt;Humanizer&lt;/strong&gt; skill as the final pass before publishing or
+sharing broadly&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Humanizer is the last quality gate. Don&amp;rsquo;t skip it for anything going
+to Confluence, LinkedIn, or partner-facing channels.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="agent-exit-checklist"&gt;Agent Exit Checklist
+&lt;/h2&gt;&lt;p&gt;Before declaring output done, verify each item. These are binary checks
+— yes or no. If any are no, revise before finishing.&lt;/p&gt;
+&lt;p&gt;No word or phrase from the banned list appears in the output&lt;/p&gt;
+&lt;p&gt;No paragraph ends by restating what was just said in the same paragraph&lt;/p&gt;
+&lt;p&gt;No two consecutive paragraphs start with the same sentence structure&lt;/p&gt;
+&lt;p&gt;Every bullet contains one fact — no bullet runs longer than two lines&lt;/p&gt;
+&lt;p&gt;The opening line does not start with &amp;ldquo;I&amp;rdquo; or a transitional filler phrase&lt;/p&gt;
+&lt;p&gt;No sentence requires more than one breath to read aloud (if it does,
+split it)&lt;/p&gt;
+&lt;p&gt;The mode selected matches the primary job of the output — cross-check
+against the How to Choose a Mode section above&lt;/p&gt;
+&lt;p&gt;If the output is going to Confluence, LinkedIn, or any partner-facing
+channel: Humanizer has been run&lt;/p&gt;</description></item><item><title>Archives</title><link>https://presaleswayne.com/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/archives/</guid><description/></item><item><title>Links</title><link>https://presaleswayne.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/links/</guid><description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
+&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;links&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;GitHub&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;website&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;https://github.com&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;TypeScript&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;website&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;</description></item><item><title>Resume</title><link>https://presaleswayne.com/resume/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/resume/</guid><description>&lt;h1 id="wayne-brown"&gt;WAYNE BROWN
+&lt;/h1&gt;&lt;p&gt;&lt;a class="link" href="mailto:brownkw@gmail.com" &gt;brownkw@gmail.com&lt;/a&gt; · &lt;a class="link" href="https://www.linkedin.com/in/brownkw" target="_blank" rel="noopener"
+&gt;https://www.linkedin.com/in/brownkw&lt;/a&gt; · Ennis, MT (Open to Remote)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="summary"&gt;SUMMARY
+&lt;/h2&gt;&lt;p&gt;14 years building at the intersection of platform and partner. I&amp;rsquo;ve shipped AI agents, Copilot plugins, reference architectures, and demo systems used by hundreds of engineers — at Cisco, Splunk, and Atlassian, with partners ranging from global SIs to Microsoft and AWS.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t just advise partners on what to build. I build it with them.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="experience"&gt;EXPERIENCE
+&lt;/h2&gt;&lt;h3 id="atlassian--august-2025--present--remote"&gt;Atlassian · August 2025 – Present · Remote
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Senior Partner Solutions Architect – Atlassian Platform&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Partner Solutions Architect for Isos Technology and Adaptavist — with broader contributions to ecosystem standards, AI tooling, and partner enablement adopted across the global PSA org.&lt;/li&gt;
+&lt;li&gt;Primary technical liaison between partner builders and Atlassian engineering; surfaced blockers around LLM integration, data residency, and Forge runtime limits before they reached deals&lt;/li&gt;
+&lt;li&gt;Led &amp;ldquo;Office Hours with Atlassian&amp;rdquo; at PwC on Rovo agent architecture, Teamwork Graph, and AI code generation — the PwC partner lead called it &amp;ldquo;one of the most impactful sessions we&amp;rsquo;ve had to date&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Selected as speaker at Partner Accelerate &amp;lsquo;26 (&amp;ldquo;The Agentic Edge&amp;rdquo;), presenting agentic AI implementation patterns to ~75 partner practitioners&lt;/li&gt;
+&lt;li&gt;Built the AWAF Assessment Template (v26.02) and Partner Solutions Template, adopted as the standard framework across Atlassian&amp;rsquo;s global PSA org (~30 people); followed with a Rovo AI agent that automates assessments against the checklist, in active use globally&lt;/li&gt;
+&lt;li&gt;Presented &amp;ldquo;Forge &amp;amp; AI&amp;rdquo; and &amp;ldquo;Vertical Solutions&amp;rdquo; at Isos Technology&amp;rsquo;s Sales Kickoff; led their Clinical Trial Management solution from concept to market launch with ~30 qualified customers identified at launch&lt;/li&gt;
+&lt;li&gt;Brought in directly by partners to unblock critical escalations at Adaptavist (Uber) and Isos (StoneX), coordinating across Atlassian engineering, partner delivery, and customer stakeholders&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="cisco--june-2018--august-2025--remote"&gt;Cisco · June 2018 – August 2025 · Remote
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Roles held:&lt;/strong&gt; Global Partner Technical Manager, Splunk · SE Team Lead, FSO Platform Development Partner Onboarding · Sales Engineer Manager, AMER Elite Partners · Cloud Channel Solutions Engineers Team Lead · Global Azure Lead Solutions Engineer, Cloud Channels · Demo Architect &amp;amp; Senior Solutions Engineer&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Platform Partnerships&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Designed and developed a Splunk plugin for Microsoft Security Copilot — a key technical proof point in establishing the Splunk–Microsoft partnership in the period immediately following Cisco&amp;rsquo;s acquisition of Splunk&lt;/li&gt;
+&lt;li&gt;Served as primary technical point of contact brokering the Splunk–Microsoft partnership for a new add-on to ingest data from Microsoft Edge for Business&lt;/li&gt;
+&lt;li&gt;Drove the AppDynamics technical workstream for the Microsoft partnership that made AppDynamics available within Azure Spring Cloud, owning GTM strategy for Azure-focused cloud-native and serverless initiatives across sales, product, and product marketing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Partner Programs &amp;amp; Enablement&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Owned global enablement strategy and solution architecture for ISV partners building on Cisco Observability Platform; onboarded 30+ partner-built solutions into the ecosystem&lt;/li&gt;
+&lt;li&gt;Managed a geographically distributed SE team including EMEA-based engineers, coordinating technical partner support across regions and time zones&lt;/li&gt;
+&lt;li&gt;Managed the SE team covering Cisco&amp;rsquo;s most strategic channel partners; team met new and renewal sales quotas in FY23&lt;/li&gt;
+&lt;li&gt;Developed and delivered Cisco Full-Stack Observability workshops with regional partner engineers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Technical Reputation &amp;amp; Demo Architecture&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Built demo assets used by 200+ SEs worldwide, including applications, recordings, and documentation across customer scenarios&lt;/li&gt;
+&lt;li&gt;Served as technical lead at Cisco Live for three consecutive years, earning Distinguished Speaker recognition; developed demo strategy, content, and on-floor presence for cloud channel initiatives&lt;/li&gt;
+&lt;li&gt;Partnered with AWS product and engineering to validate AppDynamics monitoring for Lambda functions deployed as Docker containers, driving the joint GTM effort&lt;/li&gt;
+&lt;li&gt;Developed AWS and Azure serverless monitoring workshop content; delivered at industry and partner events&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="oracle--august-2012--july-2018--remote"&gt;Oracle · August 2012 – July 2018 · Remote
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Demo Architect&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Supported 150+ sales consultants and solutions engineers with reusable demo assets, integration prototypes, and product extensions across global regions&lt;/li&gt;
+&lt;li&gt;Built and presented connected car demo integrating Oracle Service Cloud and Oracle IoT Cloud Service as a featured in-booth presenter at Oracle OpenWorld and GM Geek Week&lt;/li&gt;
+&lt;li&gt;Prototyped integrations between Oracle&amp;rsquo;s CX SaaS suite and the Pepper humanoid robot, spanning knowledge management, CPQ, marketing, and commerce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="awards--recognition"&gt;AWARDS &amp;amp; RECOGNITION
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;2024 Distinguished Computer Science Alumnus of the Year, Mississippi College&lt;/li&gt;
+&lt;li&gt;Splunk Global Partner Team Rising Star FY25 Stub Quarter&lt;/li&gt;
+&lt;li&gt;FY16 Solutions Consulting MVP&lt;/li&gt;
+&lt;li&gt;Q1 FY18 Transformation Award&lt;/li&gt;
+&lt;li&gt;FY19 Top Performer — Sales Strategy &amp;amp; Enablement&lt;/li&gt;
+&lt;li&gt;Cisco FY21 Achiever&lt;/li&gt;
+&lt;li&gt;FY22 Q3 AppDynamics SE of the Quarter: Cloud &amp;amp; Cross-Architecture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="certifications"&gt;CERTIFICATIONS
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Microsoft Certified: Azure Fundamentals&lt;/li&gt;
+&lt;li&gt;The Extraordinary Presenter&lt;/li&gt;
+&lt;li&gt;Atlassian Certified ITSM Specialist&lt;/li&gt;
+&lt;li&gt;Atlassian Certified Agile DevOps Specialist&lt;/li&gt;
+&lt;li&gt;Atlassian Certified Teamwork Collection Specialist&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="education"&gt;EDUCATION
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;M.S., Computer Science&lt;/strong&gt; · Mississippi College · 2006&lt;br&gt;
+&lt;strong&gt;B.S., Computer Science&lt;/strong&gt; · Mississippi College · 2002&lt;/p&gt;</description></item><item><title>Search</title><link>https://presaleswayne.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://presaleswayne.com/search/</guid><description/></item></channel></rss>
