@@ -562,6 +562,24 @@ function syncInstrInput(){const el=document.getElementById("instrInput");if(el)e
 /* ===== GENERATION ===== */
 function rand(a){return a[Math.floor(Math.random()*a.length)];}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+/* A shuffled deck of every distinct option: no option repeats until all have been
+   dealt. On refill, the first card can't match the one just dealt (no back-to-back twins). */
+function makeDeck(make,key){
+  let bag=shuffle(make()),last=null;
+  return{
+    left:()=>bag.length,
+    draw(){
+      if(!bag.length){bag=shuffle(make());const n=bag.length;if(n>1&&key(bag[n-1])===last)[bag[0],bag[n-1]]=[bag[n-1],bag[0]];}
+      const v=bag.pop();last=key(v);return v;
+    }
+  };
+}
+/* every unordered combination (with repetition) of k items from set */
+function multisets(set,k,start=0){
+  if(!k)return[[]];const out=[];
+  for(let i=start;i<set.length;i++)for(const rest of multisets(set,k-1,i))out.push([set[i],...rest]);
+  return out;
+}
 
 function generate(){
   const P=[];
@@ -579,29 +597,53 @@ function generate(){
 
   if(state.type==="name"||state.type==="draw"){
     /* Name & Draw the Note gate accidentals by difficulty: none on easy,
-       ~35% on medium, ~60% on hard (randomly sharp or flat). */
+       ~35% on medium, ~60% on hard (randomly sharp or flat).
+       Each note + accidental (G4, G♯4, G♭4) is its own option. Naturals and
+       sharps/flats deal from separate per-clef decks so the difficulty ratio holds;
+       if the wanted deck has run dry while the other still has unused options,
+       deal from the other rather than repeat. */
     const accChance=state.diff==="easy"?0:state.diff==="medium"?0.35:0.6;
-    const drawAcc=()=> Math.random()<accChance ? (Math.random()<0.5?1:-1) : 0;
-    if(both){
-      for(let i=0;i<state.count;i++){const c=clefOf();P.push({clef:c,pitch:rand(poolOf(c)),acc:drawAcc()});}
-    }else{
-      let bag=shuffle(poolOf(state.clef).slice());
-      for(let i=0;i<state.count;i++){if(!bag.length)bag=shuffle(poolOf(state.clef).slice());P.push({clef:state.clef,pitch:bag.pop(),acc:drawAcc()});}
+    const decks={};
+    const decksOf=(c)=> decks[c]||(decks[c]={
+      nat:makeDeck(()=>poolOf(c).map(p=>({pitch:p,acc:0})),o=>o.pitch.num+":0"),
+      acc:makeDeck(()=>poolOf(c).flatMap(p=>[{pitch:p,acc:1},{pitch:p,acc:-1}]),o=>o.pitch.num+":"+o.acc)
+    });
+    for(let i=0;i<state.count;i++){
+      const c=clefOf(),d=decksOf(c);
+      let want=Math.random()<accChance?d.acc:d.nat;
+      const other=want===d.acc?d.nat:d.acc;
+      if(accChance>0&&!want.left()&&other.left())want=other;
+      const o=want.draw();P.push({clef:c,pitch:o.pitch,acc:o.acc});
     }
   }else if(state.type==="interval"){
+    /* Each (starting note, interval size) pair that fits within the clef's range is one option. */
     const sizes=state.diff==="easy"?[2,3,4,5]:state.diff==="medium"?[2,3,4,5,6,8]:[2,3,4,5,6,7,8];
+    const decks={};
+    const deckOf=(c)=>{
+      if(decks[c]!==undefined)return decks[c];
+      const nums=poolOf(c).map(p=>p.num).sort((a,b)=>a-b),hi=nums[nums.length-1];
+      const opts=[];for(const low of nums)for(const size of sizes)if(low+size-1<=hi)opts.push({low,high:low+size-1});
+      return decks[c]=opts.length?makeDeck(()=>opts.slice(),o=>o.low+":"+o.high):null;
+    };
     for(let i=0;i<state.count;i++){
-      const c=clefOf();const nums=poolOf(c).map(p=>p.num).sort((a,b)=>a-b);const hi=nums[nums.length-1];
-      let tries=0,low,size,high;
-      do{low=rand(nums);size=rand(sizes);high=low+(size-1);tries++;}while(high>hi&&tries<40);
-      if(high>hi)high=hi;
+      const c=clefOf(),deck=deckOf(c);
+      let low,high;
+      if(deck){({low,high}=deck.draw());}
+      else{ // no interval fits the selected notes: fall back to the old clamped pick
+        const nums=poolOf(c).map(p=>p.num);low=rand(nums);high=low;
+      }
       P.push({clef:c,low:pitchFromNum(low),high:pitchFromNum(high)});
     }
   }else{ // rhythm (clef not shown)
+    /* Each combination of note values is one option regardless of order
+       (half + quarter = quarter + half). Hard mixes 2- and 3-term sums in one deck.
+       Terms are shown in a random order. */
     const set=state.diff==="easy"?["whole","half","quarter"]:["whole","half","quarter","eighth"];
+    const combos=state.diff==="hard"?[...multisets(set,2),...multisets(set,3)]:multisets(set,2);
+    const deck=makeDeck(()=>combos.slice(),t=>t.join("+"));
     for(let i=0;i<state.count;i++){
-      const n=state.diff==="hard"?(Math.random()<.5?3:2):2;const terms=[];let total=0;
-      for(let k=0;k<n;k++){const d=rand(set);terms.push(d);total+=DURATIONS[d].beats;}
+      const terms=shuffle(deck.draw().slice());
+      const total=terms.reduce((s,d)=>s+DURATIONS[d].beats,0);
       P.push({clef:"treble",terms,total});
     }
   }
